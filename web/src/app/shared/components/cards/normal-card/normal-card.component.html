@@ -1,25 +1,25 @@
-<a routerLink="/rooms/1212" class="flex flex-col gap-2">
+<a routerLink="/rooms/{{ room.id }}" class="flex flex-col gap-2">
   <figure>
     <img
-      [src]="image_url"
-      [alt]="location"
+      [src]="room.image_url"
+      [alt]="room.location"
       class="h-[20rem] w-full object-cover rounded-xl"
     />
   </figure>
   <main class="flex flex-col">
     <div class="flex justify-between">
-      <h2 class="text-base font-medium text-slate-700">{{ location }}</h2>
+      <h2 class="text-base font-medium text-slate-700">{{ room.location }}</h2>
       <div class="flex items-center gap-2">
         <i class="fa-solid fa-star text-[0.7rem]"></i>
-        <p class="text-base font-medium text-slate-700">{{ rating }}</p>
+        <p class="text-base font-medium text-slate-700">{{ room.rating }}</p>
       </div>
     </div>
     <p class="text-sm font-medium text-slate-500">Stay with Marinee. Retired</p>
     <p class="text-sm font-medium text-slate-500">
-      {{ date_from }} - {{ date_to }}
+      {{ room.date_from }} - {{ room.date_to }}
     </p>
     <p class="text-base font-medium text-slate-700 mt-2">
-      € {{ price }} <span class="font-normal">night</span>
+      € {{ room.price }} <span class="font-normal">night</span>
     </p>
   </main>
 </a>

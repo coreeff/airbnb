@@ -26,3 +26,32 @@ export interface OptionsI {
       }
     | boolean;
 }
+
+export type Property = {
+  id: number;
+  documentId: string;
+  location: string;
+  price: number;
+  rating: number;
+  image_url: string;
+  createdAt: string;
+  updatedAt: string;
+  publishedAt: string;
+  locale: string | null;
+  date_from: string;
+  date_to: string;
+};
+
+type Meta = {
+  pagination: {
+    page: number;
+    pageSize: number;
+    pageCount: number;
+    total: number;
+  };
+};
+
+export type RoomsType = {
+  data: Property[];
+  meta: Meta;
+};

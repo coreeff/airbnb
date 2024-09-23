@@ -2,15 +2,8 @@
   <app-header />
   <section class="py-5">
     <div class="grid grid-cols-5 gap-6 gap-y-8">
-      @for (item of CARD_DATA; track $index) {
-      <app-normal-card
-        [price]="item.price"
-        [rating]="item.rating"
-        [date_to]="item.date_to"
-        [location]="item.location"
-        [image_url]="item.image_url"
-        [date_from]="item.date_from"
-      />
+      @for (room of rooms.data; track room.id) {
+      <app-normal-card [room]="room" />
       }
     </div>
   </section>
