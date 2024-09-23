@@ -4,11 +4,12 @@
     <div class="grid grid-cols-5 gap-6 gap-y-8">
       @for (item of CARD_DATA; track $index) {
       <app-normal-card
-        [date]="item.date"
         [price]="item.price"
         [rating]="item.rating"
+        [date_to]="item.date_to"
         [location]="item.location"
-        [imageUrl]="item.imageUrl"
+        [image_url]="item.image_url"
+        [date_from]="item.date_from"
       />
       }
     </div>

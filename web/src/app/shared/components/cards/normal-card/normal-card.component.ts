@@ -10,9 +10,10 @@ import { RouterLink } from '@angular/router';
   styles: ``,
 })
 export class NormalCardComponent {
-  @Input() imageUrl: string = '';
-  @Input() location: string = '';
-  @Input() date: string = '';
   @Input() price: number = 0;
   @Input() rating: number = 0;
+  @Input() date_to: string = '';
+  @Input() location: string = '';
+  @Input() date_from: string = '';
+  @Input() image_url: string = '';
 }

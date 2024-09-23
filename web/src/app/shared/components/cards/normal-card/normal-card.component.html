@@ -1,7 +1,7 @@
 <a routerLink="/rooms/1212" class="flex flex-col gap-2">
   <figure>
     <img
-      [src]="imageUrl"
+      [src]="image_url"
       [alt]="location"
       class="h-[20rem] w-full object-cover rounded-xl"
     />
@@ -15,7 +15,9 @@
       </div>
     </div>
     <p class="text-sm font-medium text-slate-500">Stay with Marinee. Retired</p>
-    <p class="text-sm font-medium text-slate-500">{{ date }}</p>
+    <p class="text-sm font-medium text-slate-500">
+      {{ date_from }} - {{ date_to }}
+    </p>
     <p class="text-base font-medium text-slate-700 mt-2">
       € {{ price }} <span class="font-normal">night</span>
     </p>

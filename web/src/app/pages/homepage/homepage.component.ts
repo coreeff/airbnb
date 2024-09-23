@@ -16,25 +16,28 @@ export class HomeComponent {
       location: 'Uclee, Belgium',
       price: 120,
       rating: 4.5,
-      imageUrl:
+      image_url:
         'https://a0.muscache.com/im/pictures/miso/Hosting-633066598262702361/original/93eebed7-db1d-4029-9f6e-1fb8ad1d45d4.jpeg?ml=true&im_w=720',
-      date: 'May 15 - Dec 12',
+      date_from: 'May 15',
+      date_to: 'Dec 12',
     },
     {
       location: 'Santa Cruz de Tenerife, Spain',
       price: 120,
       rating: 4.5,
-      imageUrl:
+      image_url:
         'https://a0.muscache.com/im/pictures/miso/Hosting-30931885/original/6e6b084c-c60f-4470-a5a1-052eaf784ffb.jpeg?im_w=1200',
-      date: 'May 15 - Dec 12',
+      date_from: 'May 15',
+      date_to: 'Dec 12',
     },
     {
       location: 'Lynoo, France',
       price: 120,
       rating: 4.5,
-      imageUrl:
+      image_url:
         'https://a0.muscache.com/im/pictures/airflow/Hosting-20351538/original/a37e8b2a-1910-49ad-a556-e55e8ef6b920.jpg?im_w=1200',
-      date: 'May 15 - Dec 12',
+      date_from: 'May 15',
+      date_to: 'Dec 12',
     },
   ];
 }
