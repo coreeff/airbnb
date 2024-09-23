@@ -7,10 +7,10 @@ import { HeaderComponent } from '@/app/shared/components/header/header.component
 import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
 
 @Component({
-  selector: 'app-home',
   standalone: true,
-  imports: [ButtonComponent, NormalCardComponent, HeaderComponent],
+  selector: 'app-home',
   templateUrl: './homepage.component.html',
+  imports: [ButtonComponent, NormalCardComponent, HeaderComponent],
 })
 export class HomeComponent {
   constructor(private getRooms: RoomsService) {}
