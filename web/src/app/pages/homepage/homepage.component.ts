@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { ButtonComponent } from '../../shared/components/button/button.component';
-import { NormalCardComponent } from '../../shared/components/cards/normal-card/normal-card.component';
-import { HeaderComponent } from '../../shared/components/header/header.component';
+
+import { ButtonComponent } from '@/app/shared/components/button/button.component';
+import { HeaderComponent } from '@/app/shared/components/header/header.component';
+import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
+import { RoomsService } from '@/app/services/rooms.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [ButtonComponent, NormalCardComponent, HeaderComponent],
   templateUrl: './homepage.component.html',
-  styles: ``,
 })
 export class HomeComponent {
   CARD_DATA = [
@@ -40,4 +41,14 @@ export class HomeComponent {
       date_to: 'Dec 12',
     },
   ];
+
+  constructor(private getRooms: RoomsService) {}
+
+  ngOnInit(): void {
+    this.getRooms
+      .getRooms(`http://localhost:1337/api/rooms`)
+      .subscribe((products) => {
+        console.log(products);
+      });
+  }
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeaderComponent } from '../../shared/components/header/header.component';
+import { HeaderComponent } from '@/app/shared/components/header/header.component';
+import { RoomsService } from '@/app/services/rooms.service';
 
 @Component({
   selector: 'app-rooms',
@@ -11,7 +12,7 @@ import { HeaderComponent } from '../../shared/components/header/header.component
 export class RoomsComponent {
   roomId: string | null = null;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private getRooms: RoomsService) {}
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
