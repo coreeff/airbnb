@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { HeaderComponent } from '@/app/shared/components/header/header.component';
+
 import { RoomsService } from '@/app/services/rooms.service';
+import { HeaderComponent } from '@/app/shared/components/header/header.component';
 
 @Component({
-  selector: 'app-rooms',
   standalone: true,
+  selector: 'app-rooms',
   imports: [HeaderComponent],
   templateUrl: './rooms.component.html',
 })
