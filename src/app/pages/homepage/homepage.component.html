@@ -1,0 +1,14 @@
+<section class="max-w-[1700px] m-auto">
+  <app-header />
+  <div class="grid grid-cols-5 gap-6 gap-y-8">
+    @for (item of CARD_DATA; track $index) {
+    <app-normal-card
+      [date]="item.date"
+      [price]="item.price"
+      [rating]="item.rating"
+      [location]="item.location"
+      [imageUrl]="item.imageUrl"
+    />
+    }
+  </div>
+</section>
