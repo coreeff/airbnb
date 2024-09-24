@@ -8,15 +8,15 @@ module.exports = {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '1500px',
+        '2xl': '1200px',
       },
     },
     extend: {
       fontSize: {
         sm: 'clamp(0.8rem, 0.17vw + 0.86rem, 0.90rem)',
         base: 'clamp(0.86rem, 0.34vw + 0.89rem, 0.98rem)',
-        lg: 'clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem)',
-        xl: 'clamp(1.56rem, 1vw + 1.31rem, 2.2rem)',
+        lg: 'clamp(1rem, 0.61vw + 1.2rem, 1.40rem)',
+        xl: 'clamp(1.40rem, 1vw + 1.31rem, 1.58rem)',
         '2xl': 'clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem)',
         '3xl': 'clamp(2.24rem, 2.38vw + 1.85rem, 3.75rem)',
         '4xl': 'clamp(3.05rem, 3.54vw + 2.17rem, 5rem)',

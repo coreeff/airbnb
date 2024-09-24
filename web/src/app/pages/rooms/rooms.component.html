@@ -1,7 +1,84 @@
 <div class="container">
   <app-header />
-  <section class="py-5">
-    <p>rooms works!</p>
-    <p>{{ roomId }}</p>
+  <section class="py-5 flex flex-col gap-5">
+    <div class="flex justify-between items-center">
+      <h2 class="text-xl font-medium">Ba hao Residence x SANTIPHAP ROOM</h2>
+      <div class="flex items-center">
+        <div>
+          <a href="#">
+            <app-button
+              [variant]="'ghost'"
+              [size]="'sm'"
+              class="hover:no-underline hover:bg-slate-100 text-[0.9rem] gap-2"
+            >
+              <i class="fa-solid fa-arrow-up-from-bracket"></i>
+              <span class="underline font-medium">Share</span>
+            </app-button>
+          </a>
+        </div>
+        <div>
+          <app-button
+            [variant]="'ghost'"
+            [size]="'sm'"
+            class="hover:no-underline hover:bg-slate-100 text-[0.9rem] gap-2"
+          >
+            <i class="fa-regular fa-heart"></i>
+            <span class="underline font-medium">Save</span>
+          </app-button>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-4 grid-rows-2 gap-2 rounded-lg overflow-hidden">
+      <figure class="bg-red-500 row-span-2 col-span-2">
+        <img
+          src="https://a0.muscache.com/im/pictures/e1387ceb-abdb-4fcb-9236-bd90da2e8c55.jpg?im_w=1200"
+          alt="image"
+          class="h-full bg-cover w-full"
+        />
+      </figure>
+      <figure>
+        <img
+          src="https://a0.muscache.com/im/pictures/b7854c47-4521-48ed-a3ae-30f63d8561a3.jpg?im_w=720"
+          alt="image"
+          class="h-full bg-cover w-full"
+        />
+      </figure>
+      <figure>
+        <img
+          src="https://a0.muscache.com/im/pictures/airflow/Hosting-18155163/original/d19adffd-85fa-4c7e-a46c-08c15530237f.jpg?im_w=720"
+          alt="image"
+          class="h-full bg-cover w-full"
+        />
+      </figure>
+      <figure>
+        <img
+          src="https://a0.muscache.com/im/pictures/airflow/Hosting-18155163/original/a675daa4-6edc-4218-80f9-5549c80c4ab9.jpg?im_w=720"
+          alt="image"
+          class="h-full bg-cover w-full"
+        />
+      </figure>
+      <figure>
+        <img
+          src="https://a0.muscache.com/im/pictures/airflow/Hosting-18155163/original/97b80cc6-bdb6-4aff-a80d-9f780ebf46c3.jpg?im_w=720"
+          alt="image"
+          class="h-full bg-cover w-full"
+        />
+      </figure>
+    </div>
+
+    <div class="grid grid-cols-3 gap-4">
+      <div class="col-span-2 h-screen">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus esse
+        quia aut veniam, earum facilis voluptatum. Cumque officiis beatae
+        accusamus hic error modi, inventore deleniti incidunt, fugit similique,
+        maiores qui.
+      </div>
+      <div class="col-span-1 sticky top-32 left-0 h-fit">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi alias,
+        excepturi, rem, blanditiis a ipsum ea delectus non dolorum nam impedit
+        harum tempora adipisci distinctio sequi dignissimos. Voluptate, eaque
+        qui.
+      </div>
+    </div>
   </section>
 </div>

@@ -20,7 +20,7 @@ const buttonVariants = cva(
           'transition-colors duration-300 text-secondary bg-transparent hover:underline underline-offset-4 shadow-none',
       },
       size: {
-        sm: 'px-4 py-1.5 text-[0.8rem]',
+        sm: 'px-3 py-1.5 text-[0.8rem]',
         md: 'px-6 py-1.5 text-sm',
         lg: 'px-8 py-4 text-base',
       },

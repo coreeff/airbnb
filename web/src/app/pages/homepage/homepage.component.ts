@@ -15,7 +15,17 @@ import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/n
 export class HomeComponent {
   constructor(private getRooms: RoomsService) {}
 
-  rooms!: RoomsType;
+  rooms: RoomsType = {
+    data: [],
+    meta: {
+      pagination: {
+        page: 1,
+        total: 1,
+        pageCount: 1,
+        pageSize: 25,
+      },
+    },
+  };
 
   ngOnInit(): void {
     this.getRooms
