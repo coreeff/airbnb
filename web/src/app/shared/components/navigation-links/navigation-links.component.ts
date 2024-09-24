@@ -1,14 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, RouterLink],
   selector: 'app-navigation-links',
+  imports: [CommonModule, RouterLink],
   templateUrl: './navigation-links.component.html',
 })
 export class NavigationLinksComponent {
+  @Input() queryParam: string | null = null;
+
   NAVIGATION_DATA = [
     {
       label: 'Icons',
