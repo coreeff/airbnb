@@ -8,21 +8,21 @@ type Size = 'sm' | 'md' | 'lg';
 type Variant = 'solid' | 'outline' | 'ghost' | 'danger';
 
 const buttonVariants = cva(
-  'w-fit disabled:cursor-not-allowed rounded-lg font-semibold focus:outline-none flex items-center gap-2 justify-center shadow-sm whitespace-nowrap disabled:cursor-not-allowed disabled:bg-primary/40 h-full',
+  'w-fit disabled:cursor-not-allowed rounded-lg font-medium focus:outline-none flex items-center gap-2 justify-center shadow-sm whitespace-nowrap disabled:cursor-not-allowed disabled:bg-primary/40 h-full',
   {
     variants: {
       variant: {
         solid: 'bg-primary text-white hover:bg-primary/90',
         danger: 'bg-red-700 text-white hover:bg-red-800',
         outline:
-          'border-2 text-secondary border-secondary bg-transparent hover:bg-secondary/10',
+          'border text-secondary border-secondary/80 bg-transparent hover:bg-secondary/10',
         ghost:
           'transition-colors duration-300 text-secondary bg-transparent hover:underline underline-offset-4 shadow-none',
       },
       size: {
         sm: 'px-3 py-1.5 text-[0.8rem]',
         md: 'px-6 py-1.5 text-sm',
-        lg: 'px-8 py-4 text-base',
+        lg: 'px-8 py-3 text-base',
       },
     },
     defaultVariants: {

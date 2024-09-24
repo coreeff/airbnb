@@ -19,7 +19,8 @@
       {{ room.date_from }} - {{ room.date_to }}
     </p>
     <p class="text-base font-medium text-slate-700 mt-2">
-      € {{ room.price }} <span class="font-normal">night</span>
+      € {{ room.price | decimalPrecision : 1 }}
+      <span class="font-normal">night</span>
     </p>
   </main>
 </a>

@@ -1,13 +1,15 @@
 import { Property } from '@/app/types';
+
+import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { DecimalPrecisionPipe } from '@/app/pipes/decimal-precision.pipe';
 
 @Component({
   standalone: true,
   selector: 'app-normal-card',
-  imports: [CommonModule, RouterLink],
   templateUrl: './normal-card.component.html',
+  imports: [CommonModule, RouterLink, DecimalPrecisionPipe],
 })
 export class NormalCardComponent {
   @Input() room!: Property;
