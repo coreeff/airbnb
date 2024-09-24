@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { RoomsType } from '@/app/types';
 import { RoomsService } from '@/app/services/rooms.service';
 import { ButtonComponent } from '@/app/shared/components/button/button.component';
+import { FooterComponent } from '@/app/shared/components/footer/footer.component';
 import { HeaderComponent } from '@/app/shared/components/header/header.component';
 import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
@@ -13,6 +14,7 @@ import { NavigationLinksComponent } from '@/app/shared/components/navigation-lin
   selector: 'app-home',
   imports: [
     ButtonComponent,
+    FooterComponent,
     HeaderComponent,
     NormalCardComponent,
     NavigationLinksComponent,
