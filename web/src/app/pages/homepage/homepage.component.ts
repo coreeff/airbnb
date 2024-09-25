@@ -44,7 +44,7 @@ export class HomeComponent {
 
       this.getRooms
         .getRooms(
-          `http://localhost:1337/api/rooms?populate=*&filters[category][name][$eq]=${
+          `http://172.17.30.111:1337/api/rooms?populate=*&filters[category][name][$eq]=${
             this.tab_id ?? 'trending'
           }`
         )
