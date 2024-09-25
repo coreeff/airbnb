@@ -1,6 +1,8 @@
 <div class="py-6 flex flex-col gap-5 border-b-2 border-slate-200">
   <h3 class="text-lg font-medium">Inspiration for future getaways</h3>
-  <div class="flex items-center border-b-2 gap-8 border-slate-200">
+  <div
+    class="flex items-center border-b-2 gap-8 border-slate-200 overflow-x-scroll no-scrollbar"
+  >
     @for (item of NAVIGATION_ITEMS; track $index) {
     <app-button
       (click)="selectedIndex = $index"

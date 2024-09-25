@@ -3,7 +3,7 @@
   <app-navigation-links [queryParam]="tab_id" />
   <section class="py-7 min-h-screen">
     <div
-      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 gap-y-8"
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-6 gap-y-8"
     >
       @for (room of rooms.data; track room.id) {
       <app-normal-card [room]="room" />

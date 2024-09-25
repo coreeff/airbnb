@@ -1,6 +1,6 @@
 <div class="container">
   <app-header />
-  <section class="py-5 flex flex-col gap-5">
+  <section class="py-5 flex flex-col gap-5 pb-16">
     <div class="flex justify-between items-center">
       <h2 class="text-xl font-medium">Ba hao Residence x SANTIPHAP ROOM</h2>
       <div class="flex items-center">
@@ -66,7 +66,7 @@
       </figure>
     </div>
 
-    <div class="grid grid-cols-5 gap-16 py-5 border-b-2">
+    <div class="grid grid-cols-5 gap-16 py-5 pb-10 border-b-2">
       <div class="col-span-3 min-h-screen">
         <div class="flex flex-col gap-6">
           <div>
@@ -97,7 +97,7 @@
                 </div>
               </div>
 
-              <div class="h-[70%] w-[5px] bg-slate-200"></div>
+              <div class="h-[2.5rem] w-0.5 bg-slate-500 opacity-20"></div>
 
               <div class="flex flex-col items-center">
                 <span class="text-lg font-medium">143</span>
@@ -167,7 +167,7 @@
       </div>
 
       <div
-        class="col-span-2 sticky top-32 left-0 h-fit rounded-2xl p-8 shadow-xl flex flex-col gap-3 border"
+        class="col-span-2 sticky top-24 left-0 h-fit rounded-2xl p-8 shadow-xl flex flex-col gap-3 border"
       >
         <div class="flex gap-2 items-end">
           <span class="text-lg font-medium leading-none">€ 50</span>
@@ -221,6 +221,49 @@
       </div>
     </div>
 
-    <div></div>
+    <div class="flex flex-col gap-5 py-3">
+      <h3 class="text-lg font-medium">Things to know</h3>
+      <div class="grid grid-cols-3">
+        <div class="flex flex-col gap-4">
+          <h3 class="text-base font-medium">House rules</h3>
+          <ul
+            class="[&>li]:text-base hover:[&>li]:underline hover:[&>li]:cursor-pointer [&>li]:w-fit flex flex-col gap-3"
+          >
+            <li>Check-in: 1:00 PM - 9:00 PM</li>
+            <li>Checkout before 10:00 AM</li>
+            <li>6 guests maximum</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <h3 class="text-base font-medium">Safety & property</h3>
+          <ul
+            class="[&>li]:text-base hover:[&>li]:underline hover:[&>li]:cursor-pointer [&>li]:w-fit flex flex-col gap-3"
+          >
+            <li>Carbon monoxide alarm not reported</li>
+            <li>Smoke alarm not reported</li>
+            <li>Nearby lake, river, other body of water</li>
+          </ul>
+        </div>
+
+        <div class="flex flex-col gap-4">
+          <h3 class="text-base font-medium">Airbnb</h3>
+          <ul
+            class="[&>li]:text-base hover:[&>li]:underline hover:[&>li]:cursor-pointer [&>li]:w-fit flex flex-col gap-3"
+          >
+            <li>
+              Free cancellation before Mar 3. Cancel before check-in on Mar 4
+              for a partial refund.
+            </li>
+            <li>Review this Host's full policy for details.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </section>
+</div>
+<div class="bg-[#F6F7F6]">
+  <div class="container">
+    <app-footer />
+  </div>
 </div>

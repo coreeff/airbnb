@@ -1,5 +1,5 @@
 <div
-  class="flex items-center gap-10 shadow-sm w-full overflow-hidden bg-white -z-10"
+  class="no-scrollbar flex items-center gap-10 shadow-sm w-full overflow-hidden overflow-x-scroll bg-white -z-10"
 >
   @for (item of NAVIGATION_DATA; track $index) {
   <a
@@ -21,7 +21,7 @@
         class="opacity-70"
       />
     </figure>
-    <span class="text-sm font-normal">
+    <span class="text-sm font-normal text-center whitespace-nowrap">
       {{ item.label }}
     </span>
   </a>

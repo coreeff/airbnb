@@ -4,8 +4,8 @@ import { ButtonComponent } from '../button/button.component';
 
 @Component({
   standalone: true,
-  imports: [CommonModule, ButtonComponent],
   selector: 'app-footer-navigation',
+  imports: [CommonModule, ButtonComponent],
   templateUrl: './footer-navigation.component.html',
 })
 export class FooterNavigationComponent {
@@ -203,36 +203,6 @@ export class FooterNavigationComponent {
         {
           label: 'Museums',
           description: 'Visit local museums',
-          url: '#',
-        },
-      ],
-    },
-    {
-      label: 'Travel Tips & Inspiration',
-      items: [
-        {
-          label: 'Travel guides',
-          description: 'Read travel guides',
-          url: '#',
-        },
-        {
-          label: 'Seasonal tips',
-          description: 'Tips for the season',
-          url: '#',
-        },
-      ],
-    },
-    {
-      label: 'Airbnb-friendly apartments',
-      items: [
-        {
-          label: 'Airbnb Residences',
-          description: 'Short-term friendly apartments',
-          url: '#',
-        },
-        {
-          label: 'Partnership properties',
-          description: 'Find Airbnb partner buildings',
           url: '#',
         },
       ],

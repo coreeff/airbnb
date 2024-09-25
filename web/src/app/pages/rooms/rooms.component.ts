@@ -5,12 +5,13 @@ import { RoomsService } from '@/app/services/rooms.service';
 import { HeaderComponent } from '@/app/shared/components/header/header.component';
 import { ButtonComponent } from '@/app/shared/components/button/button.component';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from '../../shared/components/footer/footer.component';
 
 @Component({
   standalone: true,
   selector: 'app-rooms',
   templateUrl: './rooms.component.html',
-  imports: [HeaderComponent, ButtonComponent, CommonModule],
+  imports: [HeaderComponent, ButtonComponent, CommonModule, FooterComponent],
 })
 export class RoomsComponent {
   roomId: string | null = null;

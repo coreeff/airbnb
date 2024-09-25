@@ -114,5 +114,23 @@ export class NavigationLinksComponent {
       icon: 'fa-solid fa-city',
       img: 'https://a0.muscache.com/pictures/10ce1091-c854-40f3-a2fb-defc2995bcaf.jpg',
     },
+    {
+      label: 'Earth homes',
+      tab_id: 'earth-homes',
+      icon: 'fa-solid fa-leaf',
+      img: 'https://a0.muscache.com/pictures/8b44f770-7156-4c7b-b4d3-d92549c8652f.jpg',
+    },
+    {
+      label: 'Farms',
+      tab_id: 'farms',
+      icon: 'fa-solid fa-tractor',
+      img: 'https://a0.muscache.com/pictures/6b639c8d-cf9b-41fb-91a0-91af9d7677cc.jpg',
+    },
+    {
+      label: 'Tiny homes',
+      tab_id: 'tiny-homes',
+      icon: 'fa-solid fa-house',
+      img: 'https://a0.muscache.com/pictures/78ba8486-6ba6-4a43-a56d-f556189193da.jpg',
+    },
   ];
 }
