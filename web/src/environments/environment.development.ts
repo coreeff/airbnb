@@ -1,0 +1,3 @@
+export const environment = {
+  STRAPI_API: 'http://localhost:1337/api',
+};
