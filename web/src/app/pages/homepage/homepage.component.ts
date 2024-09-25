@@ -6,9 +6,9 @@ import { RoomsService } from '@/app/services/rooms.service';
 import { ButtonComponent } from '@/app/shared/components/button/button.component';
 import { FooterComponent } from '@/app/shared/components/footer/footer.component';
 import { HeaderComponent } from '@/app/shared/components/header/header.component';
+import { DropdownComponent } from '@/app/shared/components/dropdown/dropdown.component';
 import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
-import { DropdownComponent } from '../../shared/components/dropdown/dropdown.component';
 
 @Component({
   standalone: true,
@@ -46,7 +46,7 @@ export class HomeComponent {
 
       this.getRooms
         .getRooms(
-          `http://172.17.30.111:1337/api/rooms?populate=*&filters[category][name][$eq]=${
+          `http://localhost:1337/api/rooms?populate=*&filters[category][name][$eq]=${
             this.tab_id ?? 'trending'
           }`
         )
