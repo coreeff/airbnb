@@ -5,7 +5,7 @@
     [queryParams]="{ tab_id: item.tab_id }"
     class="flex flex-col items-center justify-center w-fit gap-2 py-3 opacity-60 hover:opacity-100 border-b-2 border-transparent hover:border-b-2 hover:border-slate-300 transition-opacity duration-300 ease-in-out"
     [ngClass]="{
-      'border-black hover:border-black': queryParam === item.tab_id
+      '!border-black hover:!border-black!': queryParam === item.tab_id
     }"
   >
     <i [ngClass]="item.icon" class="text-[1.25rem] opacity-90"></i>
