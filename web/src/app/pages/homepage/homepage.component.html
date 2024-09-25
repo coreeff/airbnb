@@ -1,6 +1,6 @@
 <div class="max-w-[1780px] m-auto px-[2vw]">
-  <app-header />
-  <app-navigation-links [queryParam]="tab_id" />
+  <app-header tab_id="tab_id" />
+  <app-navigation-links queryParam="tab_id" />
   <section class="py-7 min-h-screen">
     <div class="grid grid-cols-5 gap-6 gap-y-8">
       @for (room of rooms.data; track room.id) {
@@ -9,4 +9,5 @@
     </div>
   </section>
 </div>
+
 <app-footer />

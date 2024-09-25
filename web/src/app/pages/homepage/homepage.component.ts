@@ -8,6 +8,7 @@ import { FooterComponent } from '@/app/shared/components/footer/footer.component
 import { HeaderComponent } from '@/app/shared/components/header/header.component';
 import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
+import { DropdownComponent } from '../../shared/components/dropdown/dropdown.component';
 
 @Component({
   standalone: true,
@@ -18,6 +19,7 @@ import { NavigationLinksComponent } from '@/app/shared/components/navigation-lin
     HeaderComponent,
     NormalCardComponent,
     NavigationLinksComponent,
+    DropdownComponent,
   ],
   templateUrl: './homepage.component.html',
 })
