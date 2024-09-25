@@ -6,7 +6,7 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Homepage',
+    title: 'Airbnb | Vacation rentals',
   },
   {
     path: 'rooms/:id',
