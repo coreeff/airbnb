@@ -1,4 +1,4 @@
-<header class="py-3.5 mb-3 border-b-2 border-slate-100">
+<header class="py-3.5 border-b-2 border-slate-100 top-0 sticky bg-white">
   <div class="flex justify-between items-center gap-5 relative">
     <a routerLink="/">
       <figure>
@@ -6,9 +6,17 @@
       </figure>
     </a>
     <app-header-small-search-box />
-    <div>
-      <a href="#" class="link text-slate-600">Airbnb your home</a>
-      <a href="#" class="link text-slate-600">
+    <div class="flex items-center justify-center gap-3">
+      <a href="#"
+        ><span
+          class="text-sm font-medium text-slate-600 rounded-full hover:bg-slate-100 py-3 px-4"
+          >Airbnb your home</span
+        ></a
+      >
+      <a
+        href="#"
+        class="text-sm font-medium rounded-full hover:bg-slate-50 text-slate-600 flex items-center justify-center"
+      >
         <i class="fa-solid fa-globe text-[1rem]"></i>
       </a>
     </div>
