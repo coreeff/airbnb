@@ -9,6 +9,10 @@ import { HeaderComponent } from '@/app/shared/components/header/header.component
 import { DropdownComponent } from '@/app/shared/components/dropdown/dropdown.component';
 import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
+import {
+  LikeRoomsService,
+  LinkedRoomT,
+} from '@/app/services/like-rooms.service';
 
 @Component({
   standalone: true,
@@ -24,9 +28,14 @@ import { NavigationLinksComponent } from '@/app/shared/components/navigation-lin
   templateUrl: './homepage.component.html',
 })
 export class HomeComponent {
-  constructor(private getRooms: RoomsService, private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private getRooms: RoomsService,
+    private likedRoomService: LikeRoomsService
+  ) {}
 
   tab_id: string | null = null;
+  likedRooms: LinkedRoomT[] = [];
 
   rooms: RoomsType = {
     data: [],
@@ -53,6 +62,12 @@ export class HomeComponent {
         .subscribe((rooms) => {
           this.rooms = rooms;
         });
+
+      this.likedRoomService.likedRooms().subscribe((items) => {
+        this.likedRooms = items;
+
+        console.log(this.likedRooms);
+      });
     });
   }
 }

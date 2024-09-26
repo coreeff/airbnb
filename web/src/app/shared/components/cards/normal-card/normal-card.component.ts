@@ -1,10 +1,11 @@
-import { Property } from '@/app/types';
-
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { DecimalPrecisionPipe } from '@/app/pipes/decimal-precision.pipe';
+
+import { Property } from '@/app/types';
 import { ButtonComponent } from '../../button/button.component';
+import { LikeRoomsService } from '@/app/services/like-rooms.service';
+import { DecimalPrecisionPipe } from '@/app/pipes/decimal-precision.pipe';
 
 @Component({
   standalone: true,
@@ -15,11 +16,24 @@ import { ButtonComponent } from '../../button/button.component';
 export class NormalCardComponent {
   @Input() room!: Property;
 
-  onButtonClick(event: MouseEvent) {
-    event.stopPropagation(); // Stops the event from propagating to the link
-    event.preventDefault(); // Prevents the link's default behavior (optional)
+  constructor(private roomLikeService: LikeRoomsService) {}
 
-    // Perform your button action here
-    console.log('Button clicked!');
+  liked: boolean = false;
+
+  ngOnInit() {
+    this.updateLikedStatus();
+  }
+
+  onButtonClick(event: MouseEvent, room: Property): void {
+    // Stops the event from propagating to the link
+    event.stopPropagation();
+    event.preventDefault();
+
+    this.roomLikeService.addToLikedRooms(room);
+    this.updateLikedStatus();
+  }
+
+  updateLikedStatus(): void {
+    this.liked = this.roomLikeService.isRoomLiked(this.room.id);
   }
 }
