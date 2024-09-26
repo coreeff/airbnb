@@ -24,6 +24,10 @@ export class NormalCardComponent {
     this.updateLikedStatus();
   }
 
+  updateLikedStatus(): void {
+    this.liked = this.roomLikeService.isRoomLiked(this.room.id);
+  }
+
   onButtonClick(event: MouseEvent, room: Property): void {
     // Stops the event from propagating to the link
     event.stopPropagation();
@@ -31,9 +35,5 @@ export class NormalCardComponent {
 
     this.roomLikeService.addToLikedRooms(room);
     this.updateLikedStatus();
-  }
-
-  updateLikedStatus(): void {
-    this.liked = this.roomLikeService.isRoomLiked(this.room.id);
   }
 }

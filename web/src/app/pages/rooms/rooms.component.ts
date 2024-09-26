@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 
-import { RoomsService } from '@/app/services/rooms.service';
+import { LikeRoomsService } from '@/app/services/like-rooms.service';
 import { HeaderComponent } from '@/app/shared/components/header/header.component';
 import { ButtonComponent } from '@/app/shared/components/button/button.component';
-import { CommonModule } from '@angular/common';
-import { FooterComponent } from '../../shared/components/footer/footer.component';
+import { FooterComponent } from '@/app/shared/components/footer/footer.component';
 
 @Component({
   standalone: true,
@@ -16,7 +16,10 @@ import { FooterComponent } from '../../shared/components/footer/footer.component
 export class RoomsComponent {
   roomId: string | null = null;
 
-  constructor(private route: ActivatedRoute, private getRooms: RoomsService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private roomLikeService: LikeRoomsService
+  ) {}
 
   OFFERS = [
     {
@@ -61,9 +64,19 @@ export class RoomsComponent {
     },
   ];
 
+  liked: boolean = false;
+
+  updateLikedStatus(): void {
+    if (this.roomId) {
+      this.liked = this.roomLikeService.isRoomLiked(parseInt(this.roomId, 10));
+    }
+  }
+
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
       this.roomId = params.get('id');
     });
+
+    this.updateLikedStatus();
   }
 }
