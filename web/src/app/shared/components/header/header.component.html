@@ -13,6 +13,11 @@
           >Airbnb your home</span
         ></a
       >
+      <a routerLink="/liked-rooms"
+        ><span
+          class="text-base font-medium text-slate-600 rounded-full hover:bg-slate-100 py-3 px-4"
+          ><i class="fa-solid fa-heart"></i></span
+      ></a>
       <a
         href="#"
         class="text-sm font-medium rounded-full hover:bg-slate-50 text-slate-600 flex items-center justify-center py-3 px-4"
@@ -29,17 +34,23 @@
             <span>My Profile</span>
           </a>
           <a
-            href="#"
-            class="flex p-2 hover:bg-slate-100 gap-2 items-center text-sm font-medium text-slate-600 hover:text-slate-800"
+            routerLink="/liked-rooms"
+            class="p-2 hover:bg-slate-100 flex gap-2 items-center text-sm font-medium text-slate-600 hover:text-slate-800"
           >
-            <span>Notifications</span>
+            <span>Liked rooms</span>
           </a>
           <a
             href="#"
             class="flex p-2 hover:bg-slate-100 gap-2 items-center text-sm font-medium text-slate-600 hover:text-slate-800"
           >
-            <span>Logout</span>
+            <span>Notifications</span>
           </a>
+          <button
+            class="flex p-2 hover:bg-slate-100 gap-2 items-center text-sm font-medium text-slate-600 hover:text-slate-800"
+            (click)="openModal()"
+          >
+            <span>Login</span>
+          </button>
         </div>
       </app-dropdown>
     </div>

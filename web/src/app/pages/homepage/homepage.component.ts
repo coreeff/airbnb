@@ -11,7 +11,7 @@ import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/n
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
 import {
   LikeRoomsService,
-  LinkedRoomT,
+  LikedRoomT,
 } from '@/app/services/like-rooms.service';
 import { environment } from '@/environments/environment';
 
@@ -36,7 +36,7 @@ export class HomeComponent {
   ) {}
 
   tab_id: string | null = null;
-  likedRooms: LinkedRoomT[] = [];
+  likedRooms: LikedRoomT[] = [];
   private apiUrl = environment.STRAPI_API;
 
   rooms: RoomsType = {
@@ -67,8 +67,6 @@ export class HomeComponent {
 
       this.likedRoomService.likedRooms().subscribe((items) => {
         this.likedRooms = items;
-
-        console.log(this.likedRooms);
       });
     });
   }

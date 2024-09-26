@@ -3,7 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 
 import { Property } from '@/app/types';
 
-export interface LinkedRoomT {
+export interface LikedRoomT {
   likedRooms: Property;
   quantity: number;
 }
@@ -12,7 +12,7 @@ export interface LinkedRoomT {
   providedIn: 'root',
 })
 export class LikeRoomsService {
-  private likedRoomsSubject = new BehaviorSubject<LinkedRoomT[]>([]);
+  private likedRoomsSubject = new BehaviorSubject<LikedRoomT[]>([]);
   likedRooms$ = this.likedRoomsSubject.asObservable();
 
   addToLikedRooms(likedRooms: Property): void {
@@ -45,7 +45,7 @@ export class LikeRoomsService {
     return false;
   }
 
-  likedRooms(): Observable<LinkedRoomT[]> {
+  likedRooms(): Observable<LikedRoomT[]> {
     return this.likedRooms$;
   }
 }

@@ -10,9 +10,15 @@ import { HeaderSmallSearchBoxComponent } from '@/app/shared/components/search-bo
   templateUrl: './header.component.html',
   imports: [
     RouterLink,
-    HeaderSmallSearchBoxComponent,
     DropdownComponent,
     NavigationLinksComponent,
+    HeaderSmallSearchBoxComponent,
   ],
 })
-export class HeaderComponent {}
+export class HeaderComponent {
+  isModalVisible = false;
+
+  openModal() {
+    this.isModalVisible = true;
+  }
+}

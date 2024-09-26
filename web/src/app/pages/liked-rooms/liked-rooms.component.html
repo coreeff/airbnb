@@ -1,0 +1,22 @@
+<div class="container m-auto">
+  <app-header />
+  <section class="py-7 min-h-screen">
+    @if (likedRooms.length < 0 || likedRooms.length === 0) {
+    <h2 class="py-5">No liked rooms yet.</h2>
+    } @if (likedRooms.length > 0) {
+    <h3 class="py-5 text-lg font-medium">Liked rooms</h3>
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 gap-6 gap-y-8"
+    >
+      @for (room of likedRooms; track $index) {
+      <app-normal-card [room]="room.likedRooms" />
+      }
+    </div>
+    }
+  </section>
+</div>
+<div class="bg-[#F6F7F6]">
+  <div class="container">
+    <app-footer />
+  </div>
+</div>
