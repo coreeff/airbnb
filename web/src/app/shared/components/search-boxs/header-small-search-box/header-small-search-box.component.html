@@ -1,21 +1,27 @@
 <div
   class="rounded-3xl transition-shadow duration-200 ease-linear shadow-md hover:shadow-lg hidden lg:flex items-center gap-2 border px-2 py-1 absolute bg-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+  [ngClass]="{
+    'text-white hidden! translate-y-[-10rem]': expand === true
+  }"
 >
   <app-button
     variant="ghost"
     class="py-1 px-1 hover:no-underline text-slate-600"
+    (click)="setExpand()"
     >Anywhere</app-button
   >
   <span class="w-[1px] h-[25px] bg-black opacity-10"></span>
   <app-button
     variant="ghost"
     class="py-0 px-1 hover:no-underline text-slate-600"
+    (click)="setExpand()"
     >Any Week</app-button
   >
   <span class="w-[1px] h-[25px] bg-black opacity-10"></span>
   <app-button
     variant="ghost"
     class="py-0 px-1 hover:no-underline text-slate-600"
+    (click)="setExpand()"
     >Add guests</app-button
   >
   <app-button class="rounded-full px-1 py-1">

@@ -1,11 +1,22 @@
 <header class="py-3.5 border-b-2 border-slate-100 top-0 sticky bg-white z-50">
-  <div class="flex justify-between items-center gap-5 relative">
+  <div class="flex justify-between items-start gap-5 relative">
     <a routerLink="/">
       <figure>
         <img src="/assets/logo.png" alt="logo" height="50" width="120" />
       </figure>
     </a>
-    <app-header-small-search-box />
+    <app-header-small-search-box
+      [expand]="expand"
+      (expandChange)="expand = $event"
+    />
+    <div
+      class="overflow-hidden transition-all duration-100 ease-out h-0 opacity-0 hidden lg:block"
+      [ngClass]="{ 'h-[9rem] opacity-100': expand }"
+    >
+      @if(expand === true){
+      <app-header-large-search-box />
+      }
+    </div>
     <div class="flex items-center justify-center">
       <a href="#"
         ><span

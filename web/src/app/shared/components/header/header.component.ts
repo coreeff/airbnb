@@ -3,6 +3,8 @@ import { Component, Input } from '@angular/core';
 import { DropdownComponent } from '../dropdown/dropdown.component';
 import { NavigationLinksComponent } from '../navigation-links/navigation-links.component';
 import { HeaderSmallSearchBoxComponent } from '@/app/shared/components/search-boxs/header-small-search-box/header-small-search-box.component';
+import { HeaderLargeSearchBoxComponent } from '../search-boxs/header-large-search-box/header-large-search-box.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
@@ -13,9 +15,12 @@ import { HeaderSmallSearchBoxComponent } from '@/app/shared/components/search-bo
     DropdownComponent,
     NavigationLinksComponent,
     HeaderSmallSearchBoxComponent,
+    HeaderLargeSearchBoxComponent,
+    CommonModule,
   ],
 })
 export class HeaderComponent {
+  expand: boolean = false;
   isModalVisible = false;
 
   openModal() {
