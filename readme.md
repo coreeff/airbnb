@@ -11,7 +11,7 @@ bun develop
 ### `Start Client`
 
 ```
-cd client
+cd web
 bun i
 ng server
 ```
