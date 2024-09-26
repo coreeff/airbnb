@@ -13,6 +13,7 @@ import {
   LikeRoomsService,
   LinkedRoomT,
 } from '@/app/services/like-rooms.service';
+import { environment } from '@/environments/environment';
 
 @Component({
   standalone: true,
@@ -36,6 +37,7 @@ export class HomeComponent {
 
   tab_id: string | null = null;
   likedRooms: LinkedRoomT[] = [];
+  private apiUrl = environment.STRAPI_API;
 
   rooms: RoomsType = {
     data: [],
@@ -55,7 +57,7 @@ export class HomeComponent {
 
       this.getRooms
         .getRooms(
-          `http://172.17.30.111:1337/api/rooms?populate=*&filters[category][name][$eq]=${
+          `${this.apiUrl}/rooms?populate=*&filters[category][name][$eq]=${
             this.tab_id ?? 'trending'
           }`
         )
