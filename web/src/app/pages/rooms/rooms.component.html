@@ -1,7 +1,7 @@
 <div class="container">
   <app-header />
   <section class="py-5 flex flex-col gap-5 pb-16">
-    <div class="flex justify-between items-center">
+    <div class="flex justify-between flex-col md:items-center md:flex-row">
       <h2 class="text-xl font-medium">Ba hao Residence x SANTIPHAP ROOM</h2>
       <div class="flex items-center">
         <div>
@@ -38,7 +38,9 @@
         </div>
       </div>
     </div>
-    <div class="grid grid-cols-4 grid-rows-2 gap-2 rounded-lg overflow-hidden">
+    <div
+      class="grid lg:grid-cols-4 grid-rows-2 gap-2 rounded-lg overflow-hidden"
+    >
       <figure class="row-span-2 col-span-2">
         <img
           src="https://a0.muscache.com/im/pictures/e1387ceb-abdb-4fcb-9236-bd90da2e8c55.jpg?im_w=1200"
@@ -76,8 +78,8 @@
       </figure>
     </div>
 
-    <div class="grid grid-cols-5 gap-16 py-5 pb-10 border-b-2">
-      <div class="col-span-3 min-h-screen">
+    <div class="grid lg:grid-cols-5 gap-16 py-5 pb-10 border-b-2">
+      <div class="lg:col-span-3 min-h-screen">
         <div class="flex flex-col gap-6">
           <div>
             <h3 class="text-xl font-medium">
@@ -177,7 +179,7 @@
       </div>
 
       <div
-        class="col-span-2 sticky top-24 left-0 h-fit rounded-2xl p-8 shadow-xl flex flex-col gap-3 border"
+        class="lg:col-span-2 lg:sticky top-24 left-0 h-fit rounded-2xl p-8 shadow-xl flex flex-col gap-3 border"
       >
         <div class="flex gap-2 items-end">
           <span class="text-lg font-medium leading-none">€ 50</span>
@@ -233,7 +235,7 @@
 
     <div class="flex flex-col gap-5 py-3">
       <h3 class="text-lg font-medium">Things to know</h3>
-      <div class="grid grid-cols-3">
+      <div class="grid lg:grid-cols-3 gap-4">
         <div class="flex flex-col gap-4">
           <h3 class="text-base font-medium">House rules</h3>
           <ul
