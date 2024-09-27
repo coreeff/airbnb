@@ -9,7 +9,6 @@ import { HeaderLargeSearchBoxComponent } from '@/app/shared/components/search-bo
 @Component({
   standalone: true,
   selector: 'app-header',
-  templateUrl: './header.component.html',
   imports: [
     RouterLink,
     CommonModule,
@@ -18,6 +17,7 @@ import { HeaderLargeSearchBoxComponent } from '@/app/shared/components/search-bo
     HeaderSmallSearchBoxComponent,
     HeaderLargeSearchBoxComponent,
   ],
+  templateUrl: './header.component.html',
 })
 export class HeaderComponent {
   expand: boolean = true;
@@ -30,9 +30,9 @@ export class HeaderComponent {
 
     console.log(window.scrollY);
 
-    const scrollY = window.scrollY;
+    const scrollY = document.documentElement.scrollTop;
 
-    if (scrollY >= 200) {
+    if (scrollY > 0) {
       this.expand = false;
     } else {
       this.expand = true;

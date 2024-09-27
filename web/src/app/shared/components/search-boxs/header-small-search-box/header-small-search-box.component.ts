@@ -1,12 +1,11 @@
-import { CommonModule } from '@angular/common';
 import {
+  Input,
+  Output,
   Component,
   EventEmitter,
   HostListener,
-  Input,
-  Output,
 } from '@angular/core';
-
+import { CommonModule } from '@angular/common';
 import { ButtonComponent } from '@/app/shared/components/button/button.component';
 
 @Component({
