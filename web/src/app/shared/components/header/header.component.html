@@ -7,7 +7,7 @@
     </a>
     <app-header-small-search-box
       [expand]="expand"
-      (expandChange)="expand = $event"
+      (expandChange)="setExpand($event)"
     />
     <div
       class="overflow-hidden transition-all duration-800 ease-out h-0 opacity-0 hidden lg:block"
