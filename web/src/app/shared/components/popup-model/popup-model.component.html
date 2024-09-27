@@ -1,36 +1,50 @@
-@if (isVisible) {
+@if (modelOpen) {
 <div
-  class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+  class="fixed top-0 left-0 w-full h-[100dvh] bg-black/50 z-50 flex items-center justify-center"
 >
-  <div class="bg-white rounded-lg shadow-lg w-full max-w-lg p-6 relative">
-    <button
-      class="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
-      (click)="close()"
+  <div
+    class="max-h-[40rem] lg:min-w-[35rem] max-w-[35rem] bg-white p-4 pb-10 rounded-xl flex flex-col relative shadow-2xl"
+  >
+    <app-button
+      variant="ghost"
+      class="absolute top-2 left-2 py-3.5 px-2 text-base"
+      (click)="closeModel()"
     >
-      &times;
-    </button>
+      <i class="fa-solid fa-xmark"></i
+    ></app-button>
 
-    <div class="modal-header mb-4">
-      <h3 class="text-xl font-semibold text-gray-900">{{ title }}</h3>
+    <div class="flex items-center border-b pb-5">
+      <span class="text-base font-semibold text-center w-full">Login</span>
     </div>
 
-    <div class="modal-body">
-      <ng-content></ng-content>
-    </div>
+    <div class="flex flex-col gap-5 p-5">
+      <h3 class="text-xl font-medium">Welcome to Airbnb</h3>
+      <form class="flex flex-col gap-5">
+        <input
+          type="email"
+          class="border-b-2 w-full px-1 py-3 text-sm text-gray-700 outline-none"
+          placeholder="Email address"
+        />
+        <input
+          type="password"
+          class="border-b-2 w-full px-1 py-3 text-sm text-gray-700 outline-none"
+          placeholder="Password"
+        />
+        <div class="flex items-center gap-2">
+          <input type="checkbox" class="h-4 w-4" />
+          <span class="text-sm text-gray-800">Remember me</span>
+        </div>
 
-    <div class="modal-footer mt-4 flex justify-end space-x-2">
-      <button
-        class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded"
-        (click)="close()"
-      >
-        Cancel
-      </button>
-      <button
-        class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded"
-        (click)="confirm()"
-      >
-        Confirm
-      </button>
+        <app-button class="w-full" size="lg">Login</app-button>
+      </form>
+
+      <div class="flex items-center justify-center gap-3">
+        <a
+          href="#"
+          class="text-sm text-gray-700 underline underline-offset-4 hover:underline-offset-8 transition-all duration-200 ease-in-out"
+          >Forgot password ?</a
+        >
+      </div>
     </div>
   </div>
 </div>

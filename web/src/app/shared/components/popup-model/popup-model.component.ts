@@ -1,23 +1,16 @@
-import { CommonModule } from '@angular/common';
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component } from '@angular/core';
+import { ButtonComponent } from '../button/button.component';
 
 @Component({
-  standalone: true,
-  imports: [CommonModule],
   selector: 'app-popup-model',
+  standalone: true,
+  imports: [ButtonComponent],
   templateUrl: './popup-model.component.html',
 })
 export class PopupModelComponent {
-  @Input() title: string = '';
-  @Input() isVisible: boolean = false;
-  @Output() closeModal: EventEmitter<void> = new EventEmitter<void>();
-  @Output() confirmModal: EventEmitter<void> = new EventEmitter<void>();
+  modelOpen: boolean = true;
 
-  close() {
-    this.closeModal.emit();
-  }
-
-  confirm() {
-    this.confirmModal.emit();
+  closeModel() {
+    this.modelOpen = false;
   }
 }

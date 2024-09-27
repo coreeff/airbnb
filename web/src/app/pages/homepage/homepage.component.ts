@@ -1,7 +1,12 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 
+import {
+  LikeRoomsService,
+  LikedRoomT,
+} from '@/app/services/like-rooms.service';
 import { RoomsType } from '@/app/types';
+import { environment } from '@/environments/environment';
 import { RoomsService } from '@/app/services/rooms.service';
 import { ButtonComponent } from '@/app/shared/components/button/button.component';
 import { FooterComponent } from '@/app/shared/components/footer/footer.component';
@@ -9,16 +14,12 @@ import { HeaderComponent } from '@/app/shared/components/header/header.component
 import { DropdownComponent } from '@/app/shared/components/dropdown/dropdown.component';
 import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
-import {
-  LikeRoomsService,
-  LikedRoomT,
-} from '@/app/services/like-rooms.service';
-import { environment } from '@/environments/environment';
 
 @Component({
   standalone: true,
   selector: 'app-home',
   imports: [
+    RouterLink,
     ButtonComponent,
     FooterComponent,
     HeaderComponent,
