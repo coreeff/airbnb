@@ -22,9 +22,9 @@ import { environment } from '@/environments/environment';
     ButtonComponent,
     FooterComponent,
     HeaderComponent,
+    DropdownComponent,
     NormalCardComponent,
     NavigationLinksComponent,
-    DropdownComponent,
   ],
   templateUrl: './homepage.component.html',
 })

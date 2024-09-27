@@ -7,7 +7,7 @@ import {
   Output,
 } from '@angular/core';
 
-import { ButtonComponent } from '../../button/button.component';
+import { ButtonComponent } from '@/app/shared/components/button/button.component';
 
 @Component({
   standalone: true,
