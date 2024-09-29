@@ -5,6 +5,8 @@
         <img src="/assets/logo.png" alt="logo" height="50" width="120" />
       </figure>
     </a>
+
+    @if (currentPath === '/') {
     <app-header-small-search-box
       [expand]="expand"
       (expandChange)="setExpand($event)"
@@ -17,6 +19,8 @@
       <app-header-large-search-box />
       }
     </div>
+    }
+
     <div class="flex items-center justify-center">
       <a href="#"
         ><span

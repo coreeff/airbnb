@@ -1,6 +1,7 @@
-import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { Router, RouterLink } from '@angular/router';
 import { Component, HostListener } from '@angular/core';
+
 import { DropdownComponent } from '@/app/shared/components/dropdown/dropdown.component';
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
 import { HeaderSmallSearchBoxComponent } from '@/app/shared/components/search-boxs/header-small-search-box/header-small-search-box.component';
@@ -24,11 +25,13 @@ export class HeaderComponent {
   isModalVisible = false;
   private isUserAction = false;
 
+  currentPath: string = '';
+
+  constructor(private router: Router) {}
+
   @HostListener('window:scroll', [])
   onWindowScroll() {
     if (this.isUserAction) return;
-
-    console.log(window.scrollY);
 
     const scrollY = document.documentElement.scrollTop;
 
@@ -50,5 +53,9 @@ export class HeaderComponent {
     setTimeout(() => {
       this.isUserAction = false;
     }, 1000);
+  }
+
+  ngOnInit() {
+    this.currentPath = this.router.url;
   }
 }
