@@ -12,9 +12,15 @@ model User {
   name          String?
   email         String  @unique
   password      String
-  role          String
+  role          ROLE    @default(USER)
   image         String?
   mobile_number String? @unique
 
   @@map("users")
+}
+
+enum ROLE {
+  USER
+  ADMIN
+  SUPER_ADMIN
 }
