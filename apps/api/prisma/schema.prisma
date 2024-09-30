@@ -47,6 +47,9 @@ model Listing {
   location     String
   images       ListingImage[]
 
+  average_rating Float?
+  review         Review[]
+
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
@@ -77,10 +80,25 @@ model ListingImage {
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
 
-  Listing   Listing? @relation(fields: [listingId], references: [id])
+  Listing   Listing? @relation(fields: [listingId], references: [id], onDelete: Cascade)
   listingId String?
 
   @@map("listing_images")
+}
+
+model Review {
+  id          String @id @default(uuid())
+  title       String
+  description String
+  rating      Int
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  Listing   Listing? @relation(fields: [listingId], references: [id], onDelete: Cascade)
+  listingId String?
+
+  @@map("reviews")
 }
 
 enum ROLE {
