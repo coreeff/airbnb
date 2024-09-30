@@ -13,6 +13,7 @@ import { FileInterceptor } from '@nestjs/platform-express';
 export class UploadController {
   constructor(private readonly uploadService: UploadService) {}
 
+  // @TODO: Add JWT Guard
   @Post()
   @UseInterceptors(FileInterceptor('file'))
   async uploadFile(@UploadedFile() file: Express.Multer.File) {
