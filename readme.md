@@ -29,6 +29,7 @@ Before running the project, ensure you have the following installed:
 
    ```bash
    DATABASE_URL='postgres://default:dj3MIwWt2YnA@ep-restless-dawn-a13ist1a.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require'
+   JWT_SECRET='super-secret'
    ```
 
 2. **For Starpi Backend:**
@@ -87,6 +88,7 @@ Before running the project, ensure you have the following installed:
 
 
    cd apps/server # Install Strapi dependencies
+   npx prisma generate # Generate the prisma schema type for development
    bun install
 
    cd apps/web # Install Angular dependencies
