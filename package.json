@@ -5,14 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently \"bun run dev:web\" \"bun run dev:server\"",
+    "dev": "concurrently  \"bun run dev:server\" \"bun run dev:web\"",
     "dev:web": "cd apps/web && ng serve",
-    "dev:server": "cd apps/server && bun dev"
+    "dev:server": "cd apps/server && bun develop"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrency": "^0.1.4"
+    "concurrently": "^9.0.1"
   }
 }
