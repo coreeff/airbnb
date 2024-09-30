@@ -28,7 +28,7 @@ Before running the project, ensure you have the following installed:
 1. **For NestJs API:**
 
    ```bash
-   DATABASE_URL=''
+   DATABASE_URL='postgres://default:dj3MIwWt2YnA@ep-restless-dawn-a13ist1a.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require'
    ```
 
 2. **For Starpi Backend:**
