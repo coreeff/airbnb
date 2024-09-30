@@ -14,7 +14,7 @@ import { UploadModule } from './common/upload/upload.module';
     PrismaModule,
     UploadModule,
   ],
-  controllers: [AppController],
   providers: [AppService],
+  controllers: [AppController],
 })
 export class AppModule {}
