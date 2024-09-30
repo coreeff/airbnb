@@ -12,7 +12,7 @@ The project is divided into several key directories:
 │   ├── server   # Strapi CMS backend (this will be removed once the API is fully functional)
 │   └── web      # Angular frontend
 ├── node_modules # Dependencies for the root project
-├── static       # Static assets (mainly used for readme docs)
+├── assets       # Static assets (mainly used for readme docs)
 └── package.json # Root package for project-wide scripts and dependencies
 ```
 
@@ -102,4 +102,4 @@ Before running the project, ensure you have the following installed:
 
 # Project Showcase
 
-![Project Showcase](./static/project.png "a title")
+![Project Showcase](./assets/project.png "a title")
