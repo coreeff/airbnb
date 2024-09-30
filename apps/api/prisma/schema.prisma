@@ -16,7 +16,71 @@ model User {
   image         String?
   mobile_number String? @unique
 
+  country  String?
+  city     String?
+  state    String?
+  zip_code String?
+  address  String?
+
+  user_currency String?
+
+  referral_code String? @unique
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  Listings Listing[]
+
   @@map("users")
+}
+
+model Listing {
+  id           String         @id @default(uuid())
+  title        String
+  description  String
+  price        Float
+  category     String
+  bedrooms     Int
+  bathrooms    Int
+  sqft         Int
+  availability DateTime
+  location     String
+  images       ListingImage[]
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  user User? @relation(fields: [id], references: [id], onDelete: Cascade)
+
+  Category   Category? @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+  categoryId String?
+
+  @@map("listings")
+}
+
+model Category {
+  id   String @id @default(uuid())
+  name String @unique
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  Listings Listing[]
+
+  @@map("categories")
+}
+
+model ListingImage {
+  id  String @id @default(uuid())
+  url String
+
+  created_at DateTime @default(now())
+  updated_at DateTime @updatedAt
+
+  Listing   Listing? @relation(fields: [listingId], references: [id])
+  listingId String?
+
+  @@map("listing_images")
 }
 
 enum ROLE {
