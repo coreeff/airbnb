@@ -1,3 +1,5 @@
+import { Role } from '../entities/role.enum';
+
 import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class AuthDto {
@@ -11,7 +13,7 @@ export class AuthDto {
 
   @IsString()
   @IsOptional()
-  role?: string;
+  role?: Role;
 }
 
 export class SignupDto {
@@ -29,7 +31,7 @@ export class SignupDto {
 
   @IsString()
   @IsNotEmpty()
-  role: string;
+  role: Role;
 
   @IsString()
   @IsOptional()

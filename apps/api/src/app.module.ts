@@ -2,12 +2,18 @@ import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
 
-import { AuthModule } from './auth/auth.module';
 import { AppController } from './app.controller';
-import { PrismaModule } from './prisma/prisma.module';
+import { AuthModule } from './core/auth/auth.module';
+import { PrismaModule } from './shared/prisma/prisma.module';
+import { UploadModule } from './common/upload/upload.module';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), AuthModule, PrismaModule],
+  imports: [
+    ConfigModule.forRoot({ isGlobal: true }),
+    AuthModule,
+    PrismaModule,
+    UploadModule,
+  ],
   controllers: [AppController],
   providers: [AppService],
 })
