@@ -23,6 +23,13 @@ Before running the project, ensure you have the following installed:
 1. **Node.js**: V20.12.2 is recommended.
 2. **Bun**: V1.1.27 is recommended.
 
+## NestJs API Reference
+
+```bash
+   # postman workspace
+   https://www.postman.com/lunar-robot-296772/airbnb-clone
+```
+
 ## Env Configuration
 
 1. **For NestJs API:**
