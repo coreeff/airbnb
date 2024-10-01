@@ -16,7 +16,9 @@ export class AuthService {
     private config: ConfigService,
   ) {}
 
-  async signup(dto: SignupDto) {
+  async signup(
+    dto: SignupDto,
+  ): Promise<{ id: string; email: string; role: string }> {
     const hashPassword = await argon.hash(dto.password);
 
     try {
@@ -47,7 +49,9 @@ export class AuthService {
     }
   }
 
-  async login(dto: AuthDto) {
+  async login(
+    dto: AuthDto,
+  ): Promise<{ access_token: string; refresh_token: string }> {
     const user = await this.prisma.user.findUnique({
       where: {
         email: dto.email,
@@ -60,27 +64,35 @@ export class AuthService {
 
     if (!passwordMatch) throw new ForbiddenException('password doesnot match');
 
-    return this.signToken(user.id, user.email, user.role);
+    const token = this.signToken(user.id, user.email, user.role);
+
+    return token;
   }
 
   async signToken(
     userId: string,
     email: string,
     role: string,
-  ): Promise<{ access_token: string }> {
+  ): Promise<{ access_token: string; refresh_token: string }> {
     const payload = {
       sub: userId,
       email,
       role,
     };
 
-    const token = await this.jwt.signAsync(payload, {
-      expiresIn: '30d',
+    const accessToken = await this.jwt.signAsync(payload, {
+      expiresIn: '15m',
       secret: this.config.get('JWT_SECRET'),
     });
 
+    const refreshToken = await this.jwt.signAsync(payload, {
+      expiresIn: '7d',
+      secret: this.config.get('JWT_REFRESH_SECRET'),
+    });
+
     return {
-      access_token: token,
+      access_token: accessToken,
+      refresh_token: refreshToken,
     };
   }
 }

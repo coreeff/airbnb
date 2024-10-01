@@ -28,34 +28,44 @@ Before running the project, ensure you have the following installed:
 1. **For NestJs API:**
 
    ```bash
-   DATABASE_URL='postgres://default:dj3MIwWt2YnA@ep-restless-dawn-a13ist1a.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require'
-   JWT_SECRET='super-secret'
+   JWT_SECRET=super-secret
+   JWT_REFRESH_SECRET=super-sa-vi-uper-ka-secret
+   DATABASE_URL=postgres://default:dj3MIwWt2YnA@ep-restless-dawn-a13ist1a.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require
+
+   # Cloudinary config
+
+   CLOUDINARY_API_KEY=536853457982797
+   CLOUDINARY_CLOUD_NAME=ujjwalbhandari
+   CLOUDINARY_API_SECRET=y0Wzum7hQDh_Ntz4vuE_3942AGQ
+
+   CLOUDINARY_UPLOAD_PRESET=medi_nepal_uploads
+   CLOUDINARY_IMAGE_UPLOAD_LINK=https://api.cloudinary.com/v1_1/ujjwalbhandari
    ```
 
 2. **For Starpi Backend:**
 
-   ```bash
-   # Server
-   HOST=0.0.0.0
-   PORT=1337
+```bash
+# Server
+HOST=0.0.0.0
+PORT=1337
 
-   # Secrets
-   APP_KEYS=UU4kCJVC/T0QxthPjC1v9w==,VTtJN97CxdNb2/55ZJ927Q==,eDz9J+NUgCyOlewShLsKdQ==,cHVCegUdb7rV2sW9E8Op8g==
-   API_TOKEN_SALT=dG1lC+RCQJ3iFz+QhlUAPg==
-   ADMIN_JWT_SECRET=Wyy9Hbuni9jgzWVEJxYkKg==
-   TRANSFER_TOKEN_SALT=ASWVK1JQcWIktA5RMRSDdQ==
+# Secrets
+APP_KEYS=UU4kCJVC/T0QxthPjC1v9w==,VTtJN97CxdNb2/55ZJ927Q==,eDz9J+NUgCyOlewShLsKdQ==,cHVCegUdb7rV2sW9E8Op8g==
+API_TOKEN_SALT=dG1lC+RCQJ3iFz+QhlUAPg==
+ADMIN_JWT_SECRET=Wyy9Hbuni9jgzWVEJxYkKg==
+TRANSFER_TOKEN_SALT=ASWVK1JQcWIktA5RMRSDdQ==
 
-   # Database
-   DATABASE_CLIENT=sqlite
-   DATABASE_HOST=
-   DATABASE_PORT=
-   DATABASE_NAME=
-   DATABASE_USERNAME=
-   DATABASE_PASSWORD=
-   DATABASE_SSL=false
-   DATABASE_FILENAME=.tmp/data.db
-   JWT_SECRET=MbSlWP1FMT810rq1iCMivg==
-   ```
+# Database
+DATABASE_CLIENT=sqlite
+DATABASE_HOST=
+DATABASE_PORT=
+DATABASE_NAME=
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
+DATABASE_SSL=false
+DATABASE_FILENAME=.tmp/data.db
+JWT_SECRET=MbSlWP1FMT810rq1iCMivg==
+```
 
 3. **For Angular Frontend:**
 
