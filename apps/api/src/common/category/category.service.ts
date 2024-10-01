@@ -1,16 +1,17 @@
-import { Category } from '@prisma/client';
 import {
   Injectable,
-  InternalServerErrorException,
   NotFoundException,
+  InternalServerErrorException,
 } from '@nestjs/common';
 
-import { CategoryDto, UpdateCategoryDto } from './dto';
+import { Category } from '@prisma/client';
+
 import {
   PageDto,
   PageMetaDto,
   PageOptionsDto,
 } from 'src/shared/decorators/pagination';
+import { CategoryDto, UpdateCategoryDto } from './dto';
 import { PrismaService } from 'src/shared/prisma/prisma.service';
 
 @Injectable()

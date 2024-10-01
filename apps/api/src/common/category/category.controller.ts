@@ -1,14 +1,14 @@
 import { Category } from '@prisma/client';
 
 import {
-  Body,
-  Controller,
-  Delete,
   Get,
+  Body,
   Param,
   Patch,
   Post,
   Query,
+  Delete,
+  Controller,
 } from '@nestjs/common';
 
 import { CategoryService } from './category.service';
