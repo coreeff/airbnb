@@ -8,6 +8,7 @@ import { PrismaModule } from './shared/prisma/prisma.module';
 import { UploadModule } from './common/upload/upload.module';
 import { CategoryService } from './common/category/category.service';
 import { CategoryModule } from './common/category/category.module';
+import { ListingModule } from './common/listing/listing.module';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { CategoryModule } from './common/category/category.module';
     PrismaModule,
     UploadModule,
     CategoryModule,
+    ListingModule,
   ],
   providers: [AppService, CategoryService],
   controllers: [AppController],

@@ -35,17 +35,18 @@ model User {
 }
 
 model Listing {
-  id           String         @id @default(uuid())
-  title        String
-  description  String
-  price        Float
-  category     String
-  bedrooms     Int
-  bathrooms    Int
-  sqft         Int
-  availability DateTime
-  location     String
-  images       ListingImage[]
+  id                String         @id @default(uuid())
+  title             String
+  description       String
+  price             Float
+  category          String
+  bedrooms          Int
+  bathrooms         Int
+  sqft              Int
+  location          String
+  availability_to   DateTime
+  availability_from DateTime
+  images            ListingImage[]
 
   average_rating Float?
   review         Review[]
