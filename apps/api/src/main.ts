@@ -2,6 +2,7 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
+  const PORT = process.env.PORT;
   const app = await NestFactory.create(AppModule);
 
   app.enableCors({
@@ -9,6 +10,6 @@ async function bootstrap() {
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   });
 
-  await app.listen(3333);
+  await app.listen(PORT);
 }
 bootstrap();

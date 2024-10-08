@@ -1,6 +1,25 @@
 version: '3.8'
 
 services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '3333:3333'
+    environment:
+      JWT_SECRET: super-secret
+      JWT_REFRESH_SECRET: super-sa-vi-uper-ka-secret
+      DATABASE_URL: mysql://myuser:mypassword@localhost:3306/myapp
+      READ_DATABASE_URL: mysql://myuser:mypassword@localhost:3307/myapp
+      PORT: 3333
+      CLOUDINARY_API_KEY: 536853457982797
+      CLOUDINARY_CLOUD_NAME: ujjwalbhandari
+      CLOUDINARY_API_SECRET: y0Wzum7hQDh_Ntz4vuE_3942AGQ
+      CLOUDINARY_UPLOAD_PRESET: medi_nepal_uploads
+      CLOUDINARY_IMAGE_UPLOAD_LINK: https://api.cloudinary.com/v1_1/ujjwalbhandari
+      FRONTEND_URL: http://localhost:4200
+
   main-db:
     image: mysql:8.0
     command: --default-authentication-plugin=mysql_native_password
