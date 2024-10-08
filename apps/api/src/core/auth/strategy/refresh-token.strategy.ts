@@ -23,7 +23,7 @@ export class RefreshTokenStrategy extends PassportStrategy(
   }
 
   async validate(payload: { sub: string; email: string }) {
-    const user = await this.prisma.user.findUnique({
+    const user = await this.prisma.read.user.findUnique({
       where: {
         id: payload.sub,
       },

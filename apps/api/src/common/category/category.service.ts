@@ -22,7 +22,7 @@ export class CategoryService {
     pageOptionsDto: PageOptionsDto,
   ): Promise<PageDto<Category>> {
     try {
-      const queryBuilder = this.prisma.category;
+      const queryBuilder = this.prisma.read.category;
       const itemCount = await queryBuilder.count();
 
       const categories = await queryBuilder.findMany({
@@ -46,7 +46,14 @@ export class CategoryService {
 
   async createCategory(categoryDto: CategoryDto) {
     try {
-      const category = await this.prisma.category.create({
+      const isCategoryAvailable = await this.prisma.read.category.findFirst({
+        where: { name: categoryDto.name },
+      });
+
+      if (isCategoryAvailable)
+        throw new InternalServerErrorException('Category already exists');
+
+      const category = await this.prisma.write.category.create({
         data: {
           ...categoryDto,
         },
@@ -60,13 +67,13 @@ export class CategoryService {
 
   async updateCategory(id: string, updateCategoryDto: UpdateCategoryDto) {
     try {
-      const category = await this.prisma.category.findUnique({
+      const category = await this.prisma.read.category.findUnique({
         where: { id },
       });
 
       if (!category) throw new NotFoundException('Category not found');
 
-      const updatedCategory = await this.prisma.category.update({
+      const updatedCategory = await this.prisma.write.category.update({
         where: { id },
         data: {
           ...updateCategoryDto,
@@ -81,13 +88,13 @@ export class CategoryService {
 
   async deleteCategory(id: string) {
     try {
-      const category = await this.prisma.category.findUnique({
+      const category = await this.prisma.read.category.findUnique({
         where: { id },
       });
 
       if (!category) throw new NotFoundException('Category not found');
 
-      await this.prisma.category.delete({ where: { id } });
+      await this.prisma.write.category.delete({ where: { id } });
 
       return { message: 'Category deleted successfully' };
     } catch (error) {

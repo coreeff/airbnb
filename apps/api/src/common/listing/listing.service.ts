@@ -19,7 +19,7 @@ export class ListingService {
 
   async getListings(pageOptionsDto: PageOptionsDto): Promise<PageDto<Listing>> {
     try {
-      const queryBuilder = this.prisma.listing;
+      const queryBuilder = this.prisma.read.listing;
       const itemCount = await queryBuilder.count();
 
       const listings = await queryBuilder.findMany({
@@ -42,7 +42,7 @@ export class ListingService {
   }
 
   async getListingById(id: string): Promise<Listing> {
-    const listing = await this.prisma.listing.findUnique({
+    const listing = await this.prisma.read.listing.findUnique({
       where: { id },
     });
 
@@ -55,7 +55,7 @@ export class ListingService {
 
   async createListing(listingDto: ListingDto): Promise<Listing> {
     try {
-      return await this.prisma.listing.create({
+      return await this.prisma.write.listing.create({
         data: {
           ...listingDto,
           images: {
@@ -75,13 +75,15 @@ export class ListingService {
     updateListingDto: UpdateListingDto,
   ): Promise<Listing> {
     try {
-      const listing = await this.prisma.listing.findUnique({ where: { id } });
+      const listing = await this.prisma.read.listing.findUnique({
+        where: { id },
+      });
 
       if (!listing) {
         throw new NotFoundException(`Listing with ID ${id} not found`);
       }
 
-      return await this.prisma.listing.update({
+      return await this.prisma.write.listing.update({
         where: { id },
         data: {
           ...updateListingDto,
@@ -99,13 +101,15 @@ export class ListingService {
 
   async deleteListing(id: string): Promise<Listing> {
     try {
-      const listing = await this.prisma.listing.findUnique({ where: { id } });
+      const listing = await this.prisma.read.listing.findUnique({
+        where: { id },
+      });
 
       if (!listing) {
         throw new NotFoundException(`Listing with ID ${id} not found`);
       }
 
-      return await this.prisma.listing.delete({
+      return await this.prisma.write.listing.delete({
         where: { id },
       });
     } catch (error) {

@@ -12,7 +12,16 @@ import { ListingModule } from './common/listing/listing.module';
 
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [
+        () => ({
+          DATABASE_URL: process.env.DATABASE_URL,
+          READ_DATABASE_URL:
+            process.env.READ_DATABASE_URL || process.env.DATABASE_URL, // fallback to main DB if read DB not specified
+        }),
+      ],
+    }),
     AuthModule,
     PrismaModule,
     UploadModule,

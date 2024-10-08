@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  main-db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    ports:
+      - '3306:3306'
+    volumes:
+      - main-db-data:/var/lib/mysql
+      - ./mysql-main.cnf:/etc/mysql/conf.d/mysql.cnf
+    networks:
+      - app-network
+
+  read-db:
+    image: mysql:8.0
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: myapp
+      MYSQL_USER: myuser
+      MYSQL_PASSWORD: mypassword
+    ports:
+      - '3307:3306'
+    volumes:
+      - read-db-data:/var/lib/mysql
+      - ./mysql-replica.cnf:/etc/mysql/conf.d/mysql.cnf
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  main-db-data:
+  read-db-data:

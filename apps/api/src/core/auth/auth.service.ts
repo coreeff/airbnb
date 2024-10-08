@@ -22,7 +22,7 @@ export class AuthService {
     const hashPassword = await argon.hash(dto.password);
 
     try {
-      const user = await this.prisma.user.create({
+      const user = await this.prisma.write.user.create({
         data: {
           ...dto,
           password: hashPassword,
@@ -52,7 +52,7 @@ export class AuthService {
   async login(
     dto: AuthDto,
   ): Promise<{ access_token: string; refresh_token: string }> {
-    const user = await this.prisma.user.findUnique({
+    const user = await this.prisma.write.user.findUnique({
       where: {
         email: dto.email,
       },

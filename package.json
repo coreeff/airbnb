@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "concurrently  \"bun run dev:server\"  \"bun run dev:api\" \"bun run dev:web\"",
+    "dev": "concurrently \"bun run dev:api\" \"bun run dev:web\"",
     "dev:web": "cd apps/web && bun run start",
     "dev:server": "cd apps/server && bun run develop",
     "dev:api": "cd apps/api && bun run start:dev",
