@@ -23,9 +23,9 @@ export class ListingDto {
   @IsNotEmpty()
   price: number;
 
-  @IsString()
-  @IsNotEmpty()
-  category: string;
+  // @IsString()
+  // @IsNotEmpty()
+  // category: string;
 
   @IsNumber()
   @IsNotEmpty()
@@ -62,8 +62,8 @@ export class ListingDto {
   average_rating?: number;
 
   @IsString()
-  @IsOptional()
-  categoryId?: string;
+  @IsNotEmpty()
+  categoryId: string;
 
   @IsUUID()
   @IsOptional()
@@ -89,9 +89,9 @@ export class UpdateListingDto {
   @IsOptional()
   price?: number;
 
-  @IsString()
-  @IsOptional()
-  category?: string;
+  // @IsString()
+  // @IsOptional()
+  // category?: string;
 
   @IsNumber()
   @IsOptional()

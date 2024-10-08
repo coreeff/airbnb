@@ -58,6 +58,8 @@ export class ListingService {
       return await this.prisma.write.listing.create({
         data: {
           ...listingDto,
+          availability_to: new Date(listingDto.availability_to), // Convert string to Date
+          availability_from: new Date(listingDto.availability_from), // Convert string to Date
           images: {
             create: listingDto.images?.map((image) => ({
               url: image.url,
@@ -66,7 +68,8 @@ export class ListingService {
         },
       });
     } catch (error) {
-      throw new InternalServerErrorException('Failed to create listing');
+      console.log(error);
+      throw new InternalServerErrorException(error);
     }
   }
 
