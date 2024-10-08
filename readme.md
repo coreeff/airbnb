@@ -37,16 +37,20 @@ Before running the project, ensure you have the following installed:
    ```bash
    JWT_SECRET=super-secret
    JWT_REFRESH_SECRET=super-sa-vi-uper-ka-secret
-   DATABASE_URL=postgres://default:dj3MIwWt2YnA@ep-restless-dawn-a13ist1a.ap-southeast-1.aws.neon.tech:5432/verceldb?sslmode=require
+   DATABASE_URL="mysql://myuser:mypassword@localhost:3306/myapp" # CREATE, UPDATE, DELETE
+   READ_DATABASE_URL="mysql://myuser:mypassword@localhost:3307/myapp" # READ
+   PORT=3333
 
    # Cloudinary config
-
    CLOUDINARY_API_KEY=536853457982797
    CLOUDINARY_CLOUD_NAME=ujjwalbhandari
    CLOUDINARY_API_SECRET=y0Wzum7hQDh_Ntz4vuE_3942AGQ
 
    CLOUDINARY_UPLOAD_PRESET=medi_nepal_uploads
    CLOUDINARY_IMAGE_UPLOAD_LINK=https://api.cloudinary.com/v1_1/ujjwalbhandari
+
+   # Frontend
+   FRONTEND_URL= http://localhost:4200/
    ```
 
 2. **For Starpi Backend:**
