@@ -68,7 +68,7 @@ export class RoomsComponent {
 
   updateLikedStatus(): void {
     if (this.roomId) {
-      this.liked = this.roomLikeService.isRoomLiked(parseInt(this.roomId, 10));
+      this.liked = this.roomLikeService.isRoomLiked(this.roomId);
     }
   }
 

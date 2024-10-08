@@ -31,7 +31,7 @@ export class LikeRoomsService {
     this.likedRoomsSubject.next(currentRooms);
   }
 
-  isRoomLiked(id: number): boolean {
+  isRoomLiked(id: string): boolean {
     const currentRooms = this.likedRoomsSubject.value;
 
     const existingRoomIndex = currentRooms.findIndex(

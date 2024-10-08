@@ -28,6 +28,10 @@ export class ListingService {
         orderBy: {
           created_at: pageOptionsDto.order,
         },
+
+        include: {
+          images: true,
+        },
       });
 
       const pageMetaDto = new PageMetaDto({

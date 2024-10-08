@@ -38,17 +38,15 @@ export class HomeComponent {
 
   tab_id: string | null = null;
   likedRooms: LikedRoomT[] = [];
-  private apiUrl = environment.STRAPI_API;
+  private apiUrl = environment.API_URL;
 
   rooms: RoomsType = {
     data: [],
     meta: {
-      pagination: {
-        page: 1,
-        total: 1,
-        pageCount: 1,
-        pageSize: 25,
-      },
+      hasNextPage: false,
+      hasPreviousPage: false,
+      itemCount: 0,
+      pageCount: 0,
     },
   };
 
@@ -56,15 +54,11 @@ export class HomeComponent {
     this.route.queryParams.subscribe((params) => {
       this.tab_id = params['tab_id'];
 
-      this.getRooms
-        .getRooms(
-          `${this.apiUrl}/rooms?populate=*&filters[category][name][$eq]=${
-            this.tab_id ?? 'trending'
-          }`
-        )
-        .subscribe((rooms) => {
-          this.rooms = rooms;
-        });
+      this.getRooms.getRooms(`${this.apiUrl}/listing`).subscribe((rooms) => {
+        this.rooms = rooms;
+
+        console.log(this.rooms);
+      });
 
       this.likedRoomService.likedRooms().subscribe((items) => {
         this.likedRooms = items;
@@ -72,3 +66,10 @@ export class HomeComponent {
     });
   }
 }
+
+/*
+`${this.apiUrl}/rooms?populate=*&filters[category][name][$eq]=${
+            this.tab_id ?? 'trending'
+          }`
+
+*/
