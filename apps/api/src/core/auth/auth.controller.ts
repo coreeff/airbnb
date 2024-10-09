@@ -8,12 +8,12 @@ import {
   Controller,
   Get,
 } from '@nestjs/common';
+import { User } from '@prisma/client';
 
 import { GetUser } from './decorator';
+import { JwtRefreshGuard } from './guard';
 import { AuthDto, SignupDto } from './dto';
 import { AuthService } from './auth.service';
-import { JwtGuard, JwtRefreshGuard } from './guard';
-import { User } from '@prisma/client';
 
 @Controller('auth')
 export class AuthController {
@@ -30,7 +30,6 @@ export class AuthController {
     return this.authService.signup(dto);
   }
 
-  // @TODO: Fix req (request) type
   @Get('refresh-token')
   @UseGuards(JwtRefreshGuard)
   refreshTokens(@GetUser() user: User) {

@@ -22,7 +22,6 @@ export class UploadService {
     const formData = new FormData();
     formData.append('file', Readable.from(file.buffer), file.originalname);
     formData.append('upload_preset', `${process.env.CLOUDINARY_UPLOAD_PRESET}`);
-
     const imageUploadUrl: string = `${process.env.CLOUDINARY_IMAGE_UPLOAD_LINK}/image/upload`;
 
     try {
@@ -32,9 +31,7 @@ export class UploadService {
         },
       });
 
-      const uploadedImageData = uploadResponse.data;
-      const imageUrl = uploadedImageData.secure_url;
-
+      const imageUrl = uploadResponse.data.secure_url;
       return imageUrl;
     } catch (error) {
       console.error('Failed to upload file:', error);
