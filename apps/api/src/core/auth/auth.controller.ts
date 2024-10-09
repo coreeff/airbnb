@@ -15,8 +15,6 @@ import { AuthService } from './auth.service';
 import { JwtGuard, JwtRefreshGuard } from './guard';
 import { User } from '@prisma/client';
 
-// @TODO: Implement refresh tokens
-
 @Controller('auth')
 export class AuthController {
   constructor(private authService: AuthService) {}
