@@ -1,4 +1,3 @@
-# Stage 1: Use Node.js with the required version and Bun for the base image
 FROM node:20.12.2 as base
 
 # Install Bun

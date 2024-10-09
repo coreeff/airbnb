@@ -53,36 +53,9 @@ Before running the project, ensure you have the following installed:
    FRONTEND_URL= http://localhost:4200/
    ```
 
-2. **For Starpi Backend:**
+1. **For Angular Frontend:**
 
-```bash
-# Server
-HOST=0.0.0.0
-PORT=1337
-
-# Secrets
-APP_KEYS=UU4kCJVC/T0QxthPjC1v9w==,VTtJN97CxdNb2/55ZJ927Q==,eDz9J+NUgCyOlewShLsKdQ==,cHVCegUdb7rV2sW9E8Op8g==
-API_TOKEN_SALT=dG1lC+RCQJ3iFz+QhlUAPg==
-ADMIN_JWT_SECRET=Wyy9Hbuni9jgzWVEJxYkKg==
-TRANSFER_TOKEN_SALT=ASWVK1JQcWIktA5RMRSDdQ==
-
-# Database
-DATABASE_CLIENT=sqlite
-DATABASE_HOST=
-DATABASE_PORT=
-DATABASE_NAME=
-DATABASE_USERNAME=
-DATABASE_PASSWORD=
-DATABASE_SSL=false
-DATABASE_FILENAME=.tmp/data.db
-JWT_SECRET=MbSlWP1FMT810rq1iCMivg==
-```
-
-3. **For Angular Frontend:**
-
-```bash
-    STRAPI_API=http://localhost:1337/api
-```
+Please, values in /environment dir.
 
 ## 📜 How to Run the Project
 
