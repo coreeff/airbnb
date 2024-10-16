@@ -16,4 +16,4 @@ ENV NODE_ENV=production
 
 RUN bun run build
 
-CMD ["bun", "run", "start:dev"]
+CMD ["bun", "run", "start"]

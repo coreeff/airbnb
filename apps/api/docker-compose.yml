@@ -7,11 +7,18 @@ services:
       dockerfile: Dockerfile
     ports:
       - '3333:3333'
+    networks:
+      - app-network
+    depends_on:
+      main-db:
+        condition: service_healthy
+      read-db:
+        condition: service_healthy
     environment:
       JWT_SECRET: super-secret
       JWT_REFRESH_SECRET: super-sa-vi-uper-ka-secret
-      DATABASE_URL: mysql://myuser:mypassword@localhost:3306/myapp
-      READ_DATABASE_URL: mysql://myuser:mypassword@localhost:3307/myapp
+      DATABASE_URL: mysql://myuser:mypassword@main-db:3306/myapp
+      READ_DATABASE_URL: mysql://myuser:mypassword@read-db:3306/myapp
       PORT: 3333
       CLOUDINARY_API_KEY: 536853457982797
       CLOUDINARY_CLOUD_NAME: ujjwalbhandari
@@ -36,6 +43,11 @@ services:
       - ./mysql-main.cnf:/etc/mysql/conf.d/mysql.cnf
     networks:
       - app-network
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
   read-db:
     image: mysql:8.0
@@ -53,6 +65,11 @@ services:
       - ./mysql-replica.cnf:/etc/mysql/conf.d/mysql.cnf
     networks:
       - app-network
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      interval: 30s
+      timeout: 10s
+      retries: 5
 
 networks:
   app-network:
