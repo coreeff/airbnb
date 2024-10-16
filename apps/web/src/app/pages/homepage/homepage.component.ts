@@ -33,7 +33,7 @@ export class HomeComponent {
   constructor(
     private route: ActivatedRoute,
     private getRooms: RoomsService,
-    private likedRoomService: LikeRoomsService
+    private likedRoomService: LikeRoomsService,
   ) {}
 
   tab_id: string | null = null;
@@ -57,7 +57,7 @@ export class HomeComponent {
       this.getRooms.getRooms(`${this.apiUrl}/listing`).subscribe((rooms) => {
         this.rooms = rooms;
 
-        console.log(this.rooms);
+        // console.log(this.rooms);
       });
 
       this.likedRoomService.likedRooms().subscribe((items) => {
