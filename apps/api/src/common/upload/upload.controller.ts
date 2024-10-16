@@ -1,17 +1,18 @@
 import {
   Post,
+  UseGuards,
   HttpStatus,
   Controller,
   UploadedFile,
   HttpException,
   UseInterceptors,
-  UseGuards,
 } from '@nestjs/common';
-import { UploadService } from './upload.service';
 import { FileInterceptor } from '@nestjs/platform-express';
-import { JwtGuard, RolesGuard } from 'src/core/auth/guard';
+
 import { Roles } from 'src/core/auth/decorator';
+import { UploadService } from './upload.service';
 import { Role } from 'src/core/auth/entities/role.enum';
+import { JwtGuard, RolesGuard } from 'src/core/auth/guard';
 
 @Controller('upload')
 export class UploadController {
