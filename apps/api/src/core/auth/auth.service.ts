@@ -52,7 +52,7 @@ export class AuthService {
   async login(
     dto: AuthDto,
   ): Promise<{ access_token: string; refresh_token: string }> {
-    const user = await this.prisma.write.user.findUnique({
+    const user = await this.prisma.read.user.findUnique({
       where: {
         email: dto.email,
       },
