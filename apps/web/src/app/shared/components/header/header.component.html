@@ -6,7 +6,7 @@
       </figure>
     </a>
 
-    @if (currentPath === '/') {
+    @if (currentPath === "/") {
     <app-header-small-search-box
       [expand]="expand"
       (expandChange)="setExpand($event)"
@@ -15,7 +15,7 @@
       class="overflow-hidden transition-all duration-800 ease-out h-0 opacity-0 hidden lg:block"
       [ngClass]="{ 'h-[9rem] opacity-100': expand }"
     >
-      @if(expand === true){
+      @if (expand === true) {
       <app-header-large-search-box />
       }
     </div>
