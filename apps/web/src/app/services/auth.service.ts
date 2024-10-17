@@ -32,6 +32,31 @@ export class AuthService {
       );
   }
 
+  signup(userData: {
+    name: string;
+    email: string;
+    password: string;
+    mobile_number: string;
+    image?: string;
+  }): Observable<any> {
+    const options: OptionsI = {
+      // responseType: 'json',
+    };
+
+    const body = {
+      ...userData,
+      role: 'USER',
+    };
+
+    return this.apiService
+      .post(`${this.apiUrl}/signup`, { ...options, ...body })
+      .pipe(
+        tap((response: any) => {
+          alert('Account created!');
+        })
+      );
+  }
+
   refreshToken(): Observable<any> {
     const refreshToken = localStorage.getItem('refresh_token');
     const options: OptionsI = {

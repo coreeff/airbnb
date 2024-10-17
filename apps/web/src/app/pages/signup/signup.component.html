@@ -1,0 +1,59 @@
+<section class="h-screen w-full flex items-center justify-center bg-gray-50">
+  <div
+    class="flex flex-col gap-5 rounded-lg p-5 bg-white min-h-[40rem] max-w-[30rem] lg:w-[60rem] my-20 mb-36"
+  >
+    <h3 class="text-xl font-medium">Register Airbnb for free!</h3>
+    <form
+      class="flex flex-col gap-5"
+      [formGroup]="signupForm"
+      (ngSubmit)="handleSignup()"
+    >
+      <input
+        type="text"
+        class="border-b-2 w-full px-1 py-3 text-sm font-medium text-gray-700 outline-none"
+        formControlName="name"
+        placeholder="John Smith"
+      />
+      <input
+        type="email"
+        class="border-b-2 w-full px-1 py-3 text-sm font-medium text-gray-700 outline-none"
+        formControlName="email"
+        placeholder="johnsmith@gmail.com"
+      />
+      <input
+        type="password"
+        class="border-b-2 w-full px-1 py-3 text-sm font-medium text-gray-700 outline-none"
+        formControlName="password"
+        placeholder="************"
+      />
+      <input
+        type="text"
+        class="border-b-2 w-full px-1 py-3 text-sm font-medium text-gray-700 outline-none"
+        formControlName="mobile_number"
+        placeholder="98*********"
+      />
+      <input
+        type="text"
+        class="border-b-2 w-full px-1 py-3 text-sm font-medium text-gray-700 outline-none"
+        formControlName="image"
+        placeholder="image url"
+      />
+
+      <app-button
+        size="lg"
+        class="w-full"
+        onsubmit="handleSignup()"
+        [disabled]="signupForm.invalid"
+        >Register</app-button
+      >
+    </form>
+
+    <div class="flex items-center justify-center gap-3">
+      <a
+        href="/"
+        class="text-sm text-gray-700 underline underline-offset-4 hover:underline-offset-8 transition-all duration-200 ease-in-out"
+        >Back to home page</a
+      >
+    </div>
+  </div>
+</section>
