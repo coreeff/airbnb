@@ -49,6 +49,7 @@ export class PopupModelComponent {
       this.authService.signin(email!, password!).subscribe({
         next: (response) => {
           console.log('Login successful', response);
+          alert('You are now logged in!');
           this.modelOpen = false;
         },
         error: (err) => {
