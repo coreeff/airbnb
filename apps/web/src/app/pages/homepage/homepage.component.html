@@ -6,7 +6,7 @@
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-5 gap-6 gap-y-8"
     >
       @for (room of rooms.data; track room.id) {
-      <app-normal-card [room]="room" />
+        <app-normal-card [room]="room" />
       }
     </div>
     <div class="py-16 flex items-center justify-center flex-col gap-2">
