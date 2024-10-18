@@ -1,13 +1,15 @@
-import { Injectable } from '@angular/core';
-import { ApiService } from './api.service';
 import { Observable, tap } from 'rxjs';
+import { Injectable } from '@angular/core';
+
 import { OptionsI } from '../types';
+import { ApiService } from './api.service';
+import { environment } from '@/environments/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private apiUrl = 'http://localhost:3333/auth';
+  private apiUrl = environment.API_URL;
 
   constructor(private apiService: ApiService) {}
 
