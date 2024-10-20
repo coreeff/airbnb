@@ -1,4 +1,5 @@
-FROM node:20.12.2 as base
+# Stage 1: Build the Angular application using Bun
+FROM node:20.12.2 AS build
 
 # Install Bun
 RUN curl -fsSL https://bun.sh/install | bash
@@ -21,8 +22,26 @@ RUN bun install
 # Copy all project files to the container
 COPY . .
 
-# Expose the default Angular development server port
-EXPOSE 4200
+# Disable Angular CLI analytics prompt
+RUN ng analytics off
 
-# Start Angular in development mode
-CMD ["ng", "serve", "--host", "0.0.0.0"]
+# Build the Angular application for production
+RUN ng build --configuration=production
+
+# Stage 2: Serve the application with Nginx
+FROM nginx:latest
+
+# Copy the custom Nginx configuration file
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Remove the default Nginx static files
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy the build output from the first stage
+COPY --from=build /app/dist/airbnb /usr/share/nginx/html/airbnb
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]

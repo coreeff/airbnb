@@ -1,0 +1,35 @@
+version: "3.8"
+
+services:
+  angular1:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: angular1
+    networks:
+      - app-network
+
+  angular2:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: angular2
+    networks:
+      - app-network
+
+  haproxy:
+    image: haproxy:latest
+    container_name: haproxy
+    ports:
+      - "80:80"
+    volumes:
+      - ./haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+    depends_on:
+      - angular1
+      - angular2
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
