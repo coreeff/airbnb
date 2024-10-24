@@ -45,6 +45,9 @@ export class AuthService {
       if (error instanceof PrismaClientKnownRequestError) {
         // p2002 is a specific type of error where unique entity is already present in the database
         if (error.code === 'P2002') {
+          this.logger.error(
+            `, Credential Already Taken!! while registering ${dto.email}`,
+          );
           throw new ForbiddenException('Credential Already Taken!!');
         }
       }

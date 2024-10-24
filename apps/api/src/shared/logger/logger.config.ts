@@ -1,8 +1,7 @@
 import * as winston from 'winston';
-import 'winston-daily-rotate-file';
 
 export const winstonLoggerOptions: winston.LoggerOptions = {
-  level: 'info', // Log level (info, error, warn, etc.)
+  // level: 'error', // Only log errors and higher (you can change this if needed)
   format: winston.format.combine(
     winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
     winston.format.printf(
@@ -11,12 +10,9 @@ export const winstonLoggerOptions: winston.LoggerOptions = {
   ),
   transports: [
     new winston.transports.Console(), // Log to console
-    new winston.transports.DailyRotateFile({
-      filename: 'logs/application-%DATE%.log', // Log with date rotation
-      datePattern: 'YYYY-MM-DD',
-      zippedArchive: true,
-      maxSize: '20m',
-      maxFiles: '14d',
+    new winston.transports.File({
+      filename: 'logs/app.log', // Single file for all errors
+      // level: 'error', // Only errors will be logged in this file
     }),
   ],
 };
