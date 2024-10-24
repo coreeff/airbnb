@@ -7,6 +7,7 @@ import { PrismaClientKnownRequestError } from '@prisma/client/runtime/library';
 
 import { AuthDto, SignupDto } from './dto';
 import { PrismaService } from 'src/shared/prisma/prisma.service';
+import { CustomLoggerService } from 'src/shared/logger/logger.service';
 
 @Injectable()
 export class AuthService {
@@ -14,6 +15,7 @@ export class AuthService {
     private jwt: JwtService,
     private prisma: PrismaService,
     private config: ConfigService,
+    private readonly logger: CustomLoggerService,
   ) {}
 
   async signup(
@@ -35,6 +37,8 @@ export class AuthService {
         },
       });
 
+      this.logger.log(`New User Registered, email:${user.email}`);
+
       return user;
     } catch (error) {
       // if the error is of prisma
@@ -44,6 +48,8 @@ export class AuthService {
           throw new ForbiddenException('Credential Already Taken!!');
         }
       }
+
+      this.logger.error(`Error on new User Registered, error:${error}`);
 
       throw error;
     }
@@ -65,6 +71,8 @@ export class AuthService {
     if (!passwordMatch) throw new ForbiddenException('password doesnot match');
 
     const token = this.signToken(user.id, user.email, user.role);
+
+    this.logger.log(`User logged in, email:${user.email}`);
 
     return token;
   }

@@ -12,10 +12,14 @@ import {
 } from 'src/shared/decorators/pagination';
 import { ListingDto, UpdateListingDto } from './dto';
 import { PrismaService } from 'src/shared/prisma/prisma.service';
+import { CustomLoggerService } from 'src/shared/logger/logger.service';
 
 @Injectable()
 export class ListingService {
-  constructor(private prisma: PrismaService) {}
+  constructor(
+    private prisma: PrismaService,
+    private readonly logger: CustomLoggerService,
+  ) {}
 
   async getListings(pageOptionsDto: PageOptionsDto): Promise<PageDto<Listing>> {
     try {
@@ -59,7 +63,7 @@ export class ListingService {
 
   async createListing(listingDto: ListingDto): Promise<Listing> {
     try {
-      return await this.prisma.write.listing.create({
+      const createdListing = await this.prisma.write.listing.create({
         data: {
           ...listingDto,
           availability_to: new Date(listingDto.availability_to), // Convert string to Date
@@ -71,8 +75,13 @@ export class ListingService {
           },
         },
       });
+
+      this.logger.log(`New Listing created: ${createdListing.id}`);
+
+      return createdListing;
     } catch (error) {
       console.log(error);
+      this.logger.error(`Error on Creating new Listing Error: ${error}`);
       throw new InternalServerErrorException(error);
     }
   }

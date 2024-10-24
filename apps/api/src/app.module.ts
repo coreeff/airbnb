@@ -9,6 +9,7 @@ import { UploadModule } from './common/upload/upload.module';
 import { CategoryService } from './common/category/category.service';
 import { CategoryModule } from './common/category/category.module';
 import { ListingModule } from './common/listing/listing.module';
+import { CustomLoggerService } from './shared/logger/logger.service';
 
 @Module({
   imports: [
@@ -28,7 +29,7 @@ import { ListingModule } from './common/listing/listing.module';
     CategoryModule,
     ListingModule,
   ],
-  providers: [AppService, CategoryService],
+  providers: [AppService, CategoryService, CustomLoggerService],
   controllers: [AppController],
 })
 export class AppModule {}
