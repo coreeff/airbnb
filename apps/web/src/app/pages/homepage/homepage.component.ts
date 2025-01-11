@@ -11,7 +11,6 @@ import { RoomsService } from '@/app/services/rooms.service';
 import { ButtonComponent } from '@/app/shared/components/button/button.component';
 import { FooterComponent } from '@/app/shared/components/footer/footer.component';
 import { HeaderComponent } from '@/app/shared/components/header/header.component';
-import { DropdownComponent } from '@/app/shared/components/dropdown/dropdown.component';
 import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
 
@@ -23,7 +22,6 @@ import { NavigationLinksComponent } from '@/app/shared/components/navigation-lin
     ButtonComponent,
     FooterComponent,
     HeaderComponent,
-    DropdownComponent,
     NormalCardComponent,
     NavigationLinksComponent,
   ],
@@ -33,7 +31,7 @@ export class HomeComponent {
   constructor(
     private route: ActivatedRoute,
     private getRooms: RoomsService,
-    private likedRoomService: LikeRoomsService,
+    private likedRoomService: LikeRoomsService
   ) {}
 
   tab_id: string | null = null;
@@ -54,11 +52,19 @@ export class HomeComponent {
     this.route.queryParams.subscribe((params) => {
       this.tab_id = params['tab_id'];
 
-      this.getRooms.getRooms(`${this.apiUrl}/listing`).subscribe((rooms) => {
-        this.rooms = rooms;
+      this.rooms = {
+        data: [],
+        meta: {
+          hasNextPage: false,
+          hasPreviousPage: false,
+          itemCount: 0,
+          pageCount: 0,
+        },
+      };
 
-        // console.log(this.rooms);
-      });
+      // this.getRooms.getRooms(`${this.apiUrl}/listing`).subscribe((rooms) => {
+      //   this.rooms = rooms;
+      // });
 
       this.likedRoomService.likedRooms().subscribe((items) => {
         this.likedRooms = items;
@@ -66,10 +72,3 @@ export class HomeComponent {
     });
   }
 }
-
-/*
-`${this.apiUrl}/rooms?populate=*&filters[category][name][$eq]=${
-            this.tab_id ?? 'trending'
-          }`
-
-*/

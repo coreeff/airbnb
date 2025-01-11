@@ -18,20 +18,19 @@ import { ButtonComponent } from '../button/button.component';
 export class PopupModelComponent {
   modelOpen: boolean = false;
 
-  constructor(private authService: AuthService) {}
+  constructor() {}
 
   ngOnInit(): void {
     this.checkIfLoggedIn();
   }
 
   checkIfLoggedIn(): void {
-    const token = this.authService.getAccessToken();
-
-    if (token) {
-      this.modelOpen = false;
-    } else {
-      this.modelOpen = true;
-    }
+    // const token = this.authService.getAccessToken();
+    // if (token) {
+    //   this.modelOpen = false;
+    // } else {
+    //   this.modelOpen = true;
+    // }
   }
 
   // login form
@@ -44,19 +43,20 @@ export class PopupModelComponent {
   });
 
   handleLogin() {
-    if (this.loginForm.valid) {
-      const { email, password } = this.loginForm.value;
-      this.authService.signin(email!, password!).subscribe({
-        next: (response) => {
-          console.log('Login successful', response);
-          alert('You are now logged in!');
-          this.modelOpen = false;
-        },
-        error: (err) => {
-          console.error('Login failed', err);
-        },
-      });
-    }
+    // if (this.loginForm.valid) {
+    //   const { email, password } = this.loginForm.value;
+    //   this.authService.signin(email!, password!).subscribe({
+    //     next: (response) => {
+    //       console.log('Login successful', response);
+    //       alert('You are now logged in!');
+    //       this.modelOpen = false;
+    //     },
+    //     error: (err) => {
+    //       console.error('Login failed', err);
+    //     },
+    //   });
+    // }
+    alert('Login successful');
   }
 
   closeModel(): void {
