@@ -3,7 +3,7 @@ import { RoomsType } from '@/app/types';
 export const rooms = {
   data: [
     {
-      id: 'room-1-abc123',
+      id: 'room-1-ASASMabc123',
       created_at: new Date(),
       updated_at: new Date(),
       title: 'Room 1 in Lalitpur',
@@ -22,7 +22,7 @@ export const rooms = {
           url: 'https://www.houzlook.com/assets/images/upload/Rooms/Bed%20Rooms/View_01-20200822103638797.jpg',
           created_at: new Date(),
           updated_at: new Date(),
-          listingId: '1',
+          listingId: 'asnans1',
         },
       ],
       average_rating: 4.5,
@@ -44,7 +44,7 @@ export const rooms = {
       location: '456 Second Ave, Kathmandu',
       images: [
         {
-          id: '2',
+          id: 'askask2',
           url: 'https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg',
           created_at: new Date(),
           updated_at: new Date(),
@@ -70,7 +70,7 @@ export const rooms = {
       location: '789 Hill View Rd, Bhaktapur',
       images: [
         {
-          id: '3',
+          id: '3asnkas',
           url: 'https://images.pexels.com/photos/237371/pexels-photo-237371.jpeg',
           created_at: new Date(),
           updated_at: new Date(),
@@ -96,7 +96,7 @@ export const rooms = {
       location: 'Basantaur Area - Kathmandu',
       images: [
         {
-          id: '1',
+          id: '1aksaksspapspas',
           url: 'https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg',
           created_at: new Date(),
           updated_at: new Date(),
@@ -123,7 +123,7 @@ export const rooms = {
       location: '404 Temple Rd, Janakpur',
       images: [
         {
-          id: '6',
+          id: '6askalsll,',
           url: 'https://www.houzlook.com/assets/images/upload/Rooms/Bed%20Rooms/View_01-20200822103638797.jpg',
           created_at: new Date(),
           updated_at: new Date(),
@@ -162,7 +162,7 @@ export const rooms = {
       userId: 'user-7',
     },
     {
-      id: 'room-1-abc123',
+      id: 'room-8-abc123',
       created_at: new Date(),
       updated_at: new Date(),
       title: 'Room 1 in Lalitpur',
@@ -189,7 +189,7 @@ export const rooms = {
       userId: 'user-1',
     },
     {
-      id: 'room-2-def456',
+      id: 'room-9ajsjkajs-def456',
       created_at: new Date(),
       updated_at: new Date(),
       title: 'Room 2 in Kathmandu',
@@ -215,7 +215,7 @@ export const rooms = {
       userId: 'user-2',
     },
     {
-      id: 'room-3-ghi789',
+      id: 'room-10skas-ghi789',
       created_at: new Date(),
       updated_at: new Date(),
       title: 'Room 3 in Bhaktapur',
@@ -241,7 +241,7 @@ export const rooms = {
       userId: 'user-3',
     },
     {
-      id: '129128912-12918291-sdksd',
+      id: '129128912askasjkas-12918291-sdksd',
       created_at: new Date(),
       updated_at: new Date(),
       title: 'Kathmandu Royal Stars',
@@ -255,7 +255,7 @@ export const rooms = {
       location: 'Basantaur Area - Kathmandu',
       images: [
         {
-          id: '1',
+          id: '1aksaksl',
           url: 'https://images.pexels.com/photos/3659683/pexels-photo-3659683.jpeg',
           created_at: new Date(),
           updated_at: new Date(),
@@ -267,7 +267,7 @@ export const rooms = {
       userId: 'e336dd4f-c3a5-44ea-b09a-ad1e36189ed2',
     },
     {
-      id: 'room-6-pqr678',
+      id: 'room-6-pasmla;slalsqr678',
       created_at: new Date(),
       updated_at: new Date(),
       title: 'Room 6 in Janakpur',
@@ -282,7 +282,7 @@ export const rooms = {
       location: '404 Temple Rd, Janakpur',
       images: [
         {
-          id: '6',
+          id: '6asAKSKAS',
           url: 'https://www.houzlook.com/assets/images/upload/Rooms/Bed%20Rooms/View_01-20200822103638797.jpg',
           created_at: new Date(),
           updated_at: new Date(),
@@ -294,7 +294,7 @@ export const rooms = {
       userId: 'user-6',
     },
     {
-      id: 'room-7-stu901',
+      id: 'roomASALKS;LASL-7-stu901',
       created_at: new Date(),
       updated_at: new Date(),
       title: 'Room 7 in Dharan',
@@ -309,7 +309,7 @@ export const rooms = {
       location: '505 Market St, Dharan',
       images: [
         {
-          id: '7',
+          id: 'SNDLSNDLKKLSD7',
           url: 'https://images.pexels.com/photos/97083/pexels-photo-97083.jpeg',
           created_at: new Date(),
           updated_at: new Date(),
