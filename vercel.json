@@ -1,8 +1,10 @@
 {
-  "builds": [
+  "rewrites": [
     {
-      "src": "apps/web/dist/airbnb/*",
-      "use": "@now/static"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
-  ]
+  ],
+  "buildCommand": "cd apps/web && ng build",
+  "outputDirectory": "apps/web/dist/web/browser"
 }
