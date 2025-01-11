@@ -4,6 +4,5 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
-  ],
-  "outputDirectory": "apps/web/dist/web/browser"
+  ]
 }
