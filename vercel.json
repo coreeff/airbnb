@@ -5,6 +5,6 @@
       "destination": "/index.html"
     }
   ],
-  "buildCommand": "cd apps/web && ng build",
+  "buildCommand": "cd apps/web && bun install && bun build",
   "outputDirectory": "apps/web/dist/web/browser"
 }
