@@ -13,6 +13,7 @@ import { FooterComponent } from '@/app/shared/components/footer/footer.component
 import { HeaderComponent } from '@/app/shared/components/header/header.component';
 import { NormalCardComponent } from '@/app/shared/components/cards/normal-card/normal-card.component';
 import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
+import { rooms } from '@/app/shared/constants';
 
 @Component({
   standalone: true,
@@ -52,15 +53,7 @@ export class HomeComponent {
     this.route.queryParams.subscribe((params) => {
       this.tab_id = params['tab_id'];
 
-      this.rooms = {
-        data: [],
-        meta: {
-          hasNextPage: false,
-          hasPreviousPage: false,
-          itemCount: 0,
-          pageCount: 0,
-        },
-      };
+      this.rooms = rooms;
 
       // this.getRooms.getRooms(`${this.apiUrl}/listing`).subscribe((rooms) => {
       //   this.rooms = rooms;

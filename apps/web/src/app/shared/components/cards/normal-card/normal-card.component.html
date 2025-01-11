@@ -18,7 +18,8 @@
     </div>
     <p class="text-sm font-medium text-slate-500">Stay with Marinee. Retired</p>
     <p class="text-sm font-medium text-slate-500">
-      {{ room.availability_from }} - {{ room.availability_to }}
+      {{ room.availability_from | date : "MMM d" }} -
+      {{ room.availability_to | date : "MMM d" }}
     </p>
     <p class="text-base font-medium text-slate-700 mt-2">
       € {{ room.price | decimalPrecision : 1 }}

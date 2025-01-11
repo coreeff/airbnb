@@ -27,21 +27,6 @@ export interface OptionsI {
     | boolean;
 }
 
-// export type Property = {
-//   id: number;
-//   documentId: string;
-//   location: string;
-//   price: number;
-//   rating: number;
-//   image_url: string;
-//   createdAt: string;
-//   updatedAt: string;
-//   publishedAt: string;
-//   locale: string | null;
-//   date_from: string;
-//   date_to: string;
-// };
-
 export type Property = {
   id: string;
   title: string;
@@ -50,10 +35,10 @@ export type Property = {
   bedrooms: number;
   bathrooms: number;
   sqft: number;
-  location: number;
+  location: string;
   availability_to: Date;
   availability_from: Date;
-  average_rating: boolean;
+  average_rating: number;
   created_at: Date;
   updated_at: Date;
   categoryId: string;
