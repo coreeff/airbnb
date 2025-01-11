@@ -1,0 +1,8 @@
+{
+  "builds": [
+    {
+      "src": "apps/web/dist/airbnb/**/*",
+      "use": "@vercel/static"
+    }
+  ]
+}
