@@ -6,19 +6,18 @@
       </figure>
     </a>
 
-    @if (currentPath === "/") {
     <app-header-small-search-box
       [expand]="expand"
       (expandChange)="setExpand($event)"
     />
-    @if (expand === true) {
+    @if (currentPath === "/" && expand === true) {
     <div
-      class="overflow-hidden transition-all ease-out h-0 hidden lg:block"
-      [ngClass]="{ 'h-[10rem]': expand }"
+      class="overflow-hidden transition-all duration-800 ease-out h-0 opacity-0 hidden lg:block"
+      [ngClass]="{ 'h-[10rem] opacity-100': expand }"
     >
       <app-header-large-search-box />
     </div>
-    } }
+    }
 
     <div class="flex items-center justify-center">
       <a href="#"
