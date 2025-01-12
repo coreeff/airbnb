@@ -33,7 +33,7 @@ export class HeaderComponent {
 
     const scrollY = document.documentElement.scrollTop;
 
-    if (scrollY > 0) {
+    if (scrollY > 200) {
       this.expand = false;
     } else {
       this.expand = true;
