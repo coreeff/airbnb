@@ -35,19 +35,19 @@ Before running the project, ensure you have the following installed:
 1. **For NestJs API:**
 
    ```bash
-   JWT_SECRET=super-secret
-   JWT_REFRESH_SECRET=super-sa-vi-uper-ka-secret
+   JWT_SECRET=
+   JWT_REFRESH_SECRET=
    DATABASE_URL="mysql://myuser:mypassword@localhost:3306/myapp" # CREATE, UPDATE, DELETE
    READ_DATABASE_URL="mysql://myuser:mypassword@localhost:3307/myapp" # READ
-   PORT=3333
+   PORT=
 
    # Cloudinary config
-   CLOUDINARY_API_KEY=536853457982797
-   CLOUDINARY_CLOUD_NAME=ujjwalbhandari
-   CLOUDINARY_API_SECRET=y0Wzum7hQDh_Ntz4vuE_3942AGQ
+   CLOUDINARY_API_KEY=
+   CLOUDINARY_CLOUD_NAME=
+   CLOUDINARY_API_SECRET=
 
-   CLOUDINARY_UPLOAD_PRESET=medi_nepal_uploads
-   CLOUDINARY_IMAGE_UPLOAD_LINK=https://api.cloudinary.com/v1_1/ujjwalbhandari
+   CLOUDINARY_UPLOAD_PRESET=
+   CLOUDINARY_IMAGE_UPLOAD_LINK=
 
    # Frontend
    FRONTEND_URL= http://localhost:4200/
