@@ -19,7 +19,7 @@ import { HeaderLargeSearchBoxComponent } from '@/app/shared/components/search-bo
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  expand: boolean = true;
+  expand!: boolean;
   isModalVisible = false;
   private isUserAction = false;
 
@@ -33,10 +33,14 @@ export class HeaderComponent {
 
     const scrollY = document.documentElement.scrollTop;
 
-    if (scrollY > 200) {
-      this.expand = false;
-    } else {
+    console.log(scrollY);
+
+    if (scrollY < 100) {
       this.expand = true;
+    }
+
+    if (scrollY > 300) {
+      this.expand = false;
     }
   }
 
@@ -54,6 +58,7 @@ export class HeaderComponent {
   }
 
   ngOnInit() {
+    this.expand = true;
     this.currentPath = this.router.url;
   }
 }

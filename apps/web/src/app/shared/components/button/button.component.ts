@@ -8,7 +8,7 @@ type Size = 'sm' | 'md' | 'lg';
 type Variant = 'solid' | 'outline' | 'ghost' | 'danger';
 
 const buttonVariants = cva(
-  'w-fit disabled:cursor-not-allowed rounded-lg font-medium focus:outline-none flex items-center gap-2 justify-center shadow-sm whitespace-nowrap disabled:cursor-not-allowed disabled:bg-primary/40 h-full',
+  'w-fit disabled:cursor-not-allowed rounded-lg font-medium focus:outline-none flex items-center gap-2 justify-center shadow-sm whitespace-nowrap disabled:bg-primary/40 h-full',
   {
     variants: {
       variant: {
