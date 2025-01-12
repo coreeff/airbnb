@@ -19,9 +19,9 @@ import { HeaderLargeSearchBoxComponent } from '@/app/shared/components/search-bo
   templateUrl: './header.component.html',
 })
 export class HeaderComponent {
-  expand!: boolean;
+  expand: boolean = true;
   isModalVisible = false;
-  private isUserAction = false;
+  // private isUserAction = false;
 
   currentPath: string = '';
 
@@ -29,11 +29,9 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    if (this.isUserAction) return;
+    // if (this.isUserAction) return;
 
     const scrollY = document.documentElement.scrollTop;
-
-    console.log(scrollY);
 
     if (scrollY < 100) {
       this.expand = true;
@@ -49,12 +47,12 @@ export class HeaderComponent {
   }
 
   setExpand(value: boolean) {
-    this.isUserAction = true;
     this.expand = value;
 
-    setTimeout(() => {
-      this.isUserAction = false;
-    }, 1000);
+    // this.isUserAction = true;
+    // setTimeout(() => {
+    // this.isUserAction = false;
+    // }, 1000);
   }
 
   ngOnInit() {
