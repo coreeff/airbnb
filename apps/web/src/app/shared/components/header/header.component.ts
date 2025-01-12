@@ -54,6 +54,7 @@ export class HeaderComponent {
   }
 
   ngOnInit() {
+    this.expand = true;
     this.currentPath = this.router.url;
   }
 }
