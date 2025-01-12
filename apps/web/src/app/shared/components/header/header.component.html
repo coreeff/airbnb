@@ -12,8 +12,8 @@
     />
     @if (currentPath === "/" && expand === true) {
     <div
-      class="overflow-hidden transition-all duration-800 ease-out h-0 opacity-0 hidden lg:block"
-      [ngClass]="{ 'h-[10rem] opacity-100': expand }"
+      class="overflow-hidden transition-all duration-800 ease-out hidden lg:block"
+      [ngClass]="{ 'h-[10rem] opacity-100': expand, 'h-0 opacity-0': !expand }"
     >
       <app-header-large-search-box />
     </div>

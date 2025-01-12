@@ -29,19 +29,13 @@ export class HeaderComponent {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    // if (this.isUserAction) return;
-
-    const scrollY = document.documentElement.scrollTop;
-
-    if (scrollY === 0) {
-      this.expand = true;
-    }
+    const scrollY =
+      document.documentElement.scrollTop || document.body.scrollTop;
+    console.log('ScrollY:', scrollY); // TODO - TO REMOVE
 
     if (scrollY < 100) {
       this.expand = true;
-    }
-
-    if (scrollY > 300) {
+    } else if (scrollY > 300) {
       this.expand = false;
     }
   }
@@ -60,7 +54,8 @@ export class HeaderComponent {
   }
 
   ngOnInit() {
-    this.expand = true;
+    console.log('Header Expand:', this.expand); // TODO - TO REMOVE
+    this.expand = document.documentElement.scrollTop < 100;
     this.currentPath = this.router.url;
   }
 }
