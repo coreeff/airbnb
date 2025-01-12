@@ -11,15 +11,14 @@
       [expand]="expand"
       (expandChange)="setExpand($event)"
     />
+    @if (expand === true) {
     <div
-      class="overflow-hidden transition-all duration-800 ease-out h-0 opacity-0 hidden lg:block"
-      [ngClass]="{ 'h-[9rem] opacity-100': expand }"
+      class="overflow-hidden transition-all ease-out h-0 hidden lg:block animate-animated-header-box"
+      [ngClass]="{ 'h-[9rem]': expand }"
     >
-      @if (expand === true) {
       <app-header-large-search-box />
-      }
     </div>
-    }
+    } }
 
     <div class="flex items-center justify-center">
       <a href="#"

@@ -79,11 +79,17 @@ module.exports = {
           '75%': { scale: '1.2' },
           '100%': { scale: '1' },
         },
+        'animated-header-box': {
+          '0%': { transform: 'translateY(0)' },
+          '100%': { transform: 'translateY(100px)' },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'room-like': 'room-like 1s',
+        'animated-header-box':
+          'animated-header-box 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
       },
     },
   },

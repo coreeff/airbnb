@@ -3,7 +3,6 @@ import { Router, RouterLink } from '@angular/router';
 import { Component, HostListener } from '@angular/core';
 
 import { DropdownComponent } from '@/app/shared/components/dropdown/dropdown.component';
-import { NavigationLinksComponent } from '@/app/shared/components/navigation-links/navigation-links.component';
 import { HeaderSmallSearchBoxComponent } from '@/app/shared/components/search-boxs/header-small-search-box/header-small-search-box.component';
 import { HeaderLargeSearchBoxComponent } from '@/app/shared/components/search-boxs/header-large-search-box/header-large-search-box.component';
 
@@ -14,7 +13,6 @@ import { HeaderLargeSearchBoxComponent } from '@/app/shared/components/search-bo
     RouterLink,
     CommonModule,
     DropdownComponent,
-    NavigationLinksComponent,
     HeaderSmallSearchBoxComponent,
     HeaderLargeSearchBoxComponent,
   ],
