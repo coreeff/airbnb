@@ -8,7 +8,7 @@ The project is divided into several key directories:
 
 ```bash
 ├── apps
-│   ├── api      # NestJS API (main backend API)
+│   ├── api      # NestJS API 
 │   ├── server   # Strapi CMS backend (this will be removed once the API is fully functional)
 │   └── web      # Angular frontend
 ├── node_modules # Dependencies for the root project
